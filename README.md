@@ -67,6 +67,58 @@ git clone https://github.com/hedburgaren/arc_ai_helpers.git
 | `/api/ai/webhook/email` | POST | Incoming email webhook |
 | `/api/ai/webhook/slack` | POST | Slack event webhook |
 
+### n8n Webhook Endpoints
+
+| Endpoint | Description |
+|----------|-------------|
+| `https://n8n.hedburgaren.se/webhook/ai-email-inbound` | Email gateway for AI assistants |
+| `https://n8n.hedburgaren.se/webhook/slack-events` | Slack event handler (Bootstrap) |
+
+### Email Gateway Example
+
+```bash
+curl -X POST https://n8n.hedburgaren.se/webhook/ai-email-inbound \
+  -H "Content-Type: application/json" \
+  -d '{
+    "from": "customer@example.com",
+    "to": "support@plastshop.se",
+    "subject": "Product inquiry",
+    "body_text": "Do you have PTFE tubes in stock?"
+  }'
+```
+
+Response includes AI-generated reply and routing info:
+```json
+{
+  "success": true,
+  "email": {
+    "to": "customer@example.com",
+    "subject": "Re: Product inquiry",
+    "body": "AI-generated response..."
+  },
+  "routing": {
+    "tenant": "plastshop",
+    "assistant": "support",
+    "qdrantCollection": "plastshop_memory"
+  }
+}
+```
+
+## Tenant Isolation
+
+Each tenant has isolated:
+- **Qdrant collection**: `{tenant}_memory` (e.g., `plastshop_memory`)
+- **AI assistants**: Configured per company in Odoo
+- **Audit logs**: Filtered by company
+
+### Supported Tenants
+
+| Tenant | Qdrant Collection | Email Domains |
+|--------|-------------------|---------------|
+| PlastShop | `plastshop_memory` | @plastshop.se |
+| ARC Gruppen | `arcgruppen_memory` | @arcgruppen.se, @arc-*.se |
+| HeartPro | `heartpro_memory` | @heartpro.se |
+
 ## Architecture
 
 ```
