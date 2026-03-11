@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- AI Log List View -->
+    <record id="ai_log_view_list" model="ir.ui.view">
+        <field name="name">ai.log.list</field>
+        <field name="model">ai.log</field>
+        <field name="arch" type="xml">
+            <list string="AI Logs" decoration-danger="status == 'error'">
+                <field name="create_date"/>
+                <field name="assistant_id"/>
+                <field name="user_id"/>
+                <field name="ai_provider"/>
+                <field name="ai_model"/>
+                <field name="token_count_total"/>
+                <field name="duration_ms"/>
+                <field name="status" widget="badge"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- AI Log Form View -->
+    <record id="ai_log_view_form" model="ir.ui.view">
+        <field name="name">ai.log.form</field>
+        <field name="model">ai.log</field>
+        <field name="arch" type="xml">
+            <form string="AI Log" create="0" edit="0">
+                <sheet>
+                    <group>
+                        <group string="Context">
+                            <field name="create_date"/>
+                            <field name="assistant_id"/>
+                            <field name="user_id"/>
+                            <field name="task_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group string="AI">
+                            <field name="ai_provider"/>
+                            <field name="ai_model"/>
+                            <field name="status" widget="badge"/>
+                        </group>
+                    </group>
+                    <group string="Metrics">
+                        <field name="token_count_input"/>
+                        <field name="token_count_output"/>
+                        <field name="token_count_total"/>
+                        <field name="duration_ms"/>
+                    </group>
+                    <notebook>
+                        <page string="Prompt" name="prompt">
+                            <field name="prompt" nolabel="1"/>
+                        </page>
+                        <page string="Response" name="response">
+                            <field name="response" nolabel="1"/>
+                        </page>
+                        <page string="Error" name="error" invisible="not error_message">
+                            <field name="error_message" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- AI Log Search View -->
+    <record id="ai_log_view_search" model="ir.ui.view">
+        <field name="name">ai.log.search</field>
+        <field name="model">ai.log</field>
+        <field name="arch" type="xml">
+            <search string="AI Logs">
+                <field name="assistant_id"/>
+                <field name="user_id"/>
+                <field name="ai_model"/>
+                <filter string="Success" name="success" domain="[('status', '=', 'success')]"/>
+                <filter string="Errors" name="errors" domain="[('status', '=', 'error')]"/>
+                <separator/>
+                <filter string="Today" name="today" domain="[('create_date', '>=', context_today().strftime('%Y-%m-%d'))]"/>
+                <filter string="This Week" name="week" domain="[('create_date', '>=', (context_today() - datetime.timedelta(days=7)).strftime('%Y-%m-%d'))]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Assistant" name="group_assistant" context="{'group_by': 'assistant_id'}"/>
+                    <filter string="User" name="group_user" context="{'group_by': 'user_id'}"/>
+                    <filter string="Provider" name="group_provider" context="{'group_by': 'ai_provider'}"/>
+                    <filter string="Status" name="group_status" context="{'group_by': 'status'}"/>
+                    <filter string="Date" name="group_date" context="{'group_by': 'create_date:day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- AI Log Action -->
+    <record id="ai_log_action" model="ir.actions.act_window">
+        <field name="name">AI Logs</field>
+        <field name="res_model">ai.log</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="ai_log_view_search"/>
+        <field name="context">{'search_default_today': 1}</field>
+    </record>
+</odoo>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- AI Task List View -->
+    <record id="ai_task_view_list" model="ir.ui.view">
+        <field name="name">ai.task.list</field>
+        <field name="model">ai.task</field>
+        <field name="arch" type="xml">
+            <list string="AI Tasks" decoration-danger="state == 'failed'" decoration-success="state == 'completed'" decoration-warning="state == 'processing'">
+                <field name="name"/>
+                <field name="assistant_id"/>
+                <field name="task_type" widget="badge"/>
+                <field name="source"/>
+                <field name="state" widget="badge"/>
+                <field name="confidence" widget="badge" optional="show"/>
+                <field name="feedback" widget="badge" optional="show"/>
+                <field name="create_date"/>
+                <field name="duration_seconds" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- AI Task Form View -->
+    <record id="ai_task_view_form" model="ir.ui.view">
+        <field name="name">ai.task.form</field>
+        <field name="model">ai.task</field>
+        <field name="arch" type="xml">
+            <form string="AI Task">
+                <header>
+                    <button name="action_process" type="object" string="Process" class="btn-primary" invisible="state != 'pending'"/>
+                    <button name="action_retry" type="object" string="Retry" class="btn-secondary" invisible="state != 'failed'"/>
+                    <button name="action_cancel" type="object" string="Cancel" class="btn-secondary" invisible="state in ('completed', 'cancelled')"/>
+                    <button name="action_approve" type="object" string="Approve" class="btn-success" invisible="state != 'completed' or feedback"/>
+                    <button name="action_reject" type="object" string="Reject" class="btn-danger" invisible="state != 'completed' or feedback"/>
+                    <field name="state" widget="statusbar" statusbar_visible="pending,processing,completed"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group string="Task">
+                            <field name="assistant_id"/>
+                            <field name="task_type"/>
+                            <field name="source"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group string="Status">
+                            <field name="confidence" widget="badge"/>
+                            <field name="confidence_score"/>
+                            <field name="feedback" widget="badge"/>
+                            <field name="retry_count"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Input/Output" name="io">
+                            <group string="Input">
+                                <field name="input_text" nolabel="1"/>
+                            </group>
+                            <group string="Output">
+                                <field name="output_text" nolabel="1"/>
+                            </group>
+                        </page>
+                        <page string="Details" name="details">
+                            <group>
+                                <group string="Timing">
+                                    <field name="started_at"/>
+                                    <field name="completed_at"/>
+                                    <field name="duration_seconds"/>
+                                </group>
+                                <group string="Related">
+                                    <field name="res_model"/>
+                                    <field name="res_id"/>
+                                    <field name="res_name"/>
+                                </group>
+                            </group>
+                            <group string="Metadata">
+                                <field name="metadata" nolabel="1"/>
+                            </group>
+                            <group string="Error" invisible="not error_message">
+                                <field name="error_message" nolabel="1"/>
+                            </group>
+                        </page>
+                        <page string="Feedback" name="feedback" invisible="not feedback">
+                            <group>
+                                <field name="feedback_notes"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- AI Task Search View -->
+    <record id="ai_task_view_search" model="ir.ui.view">
+        <field name="name">ai.task.search</field>
+        <field name="model">ai.task</field>
+        <field name="arch" type="xml">
+            <search string="AI Tasks">
+                <field name="name"/>
+                <field name="assistant_id"/>
+                <field name="input_text"/>
+                <filter string="Pending" name="pending" domain="[('state', '=', 'pending')]"/>
+                <filter string="Processing" name="processing" domain="[('state', '=', 'processing')]"/>
+                <filter string="Completed" name="completed" domain="[('state', '=', 'completed')]"/>
+                <filter string="Failed" name="failed" domain="[('state', '=', 'failed')]"/>
+                <separator/>
+                <filter string="Needs Review" name="needs_review" domain="[('state', '=', 'completed'), ('feedback', '=', False), ('confidence', 'in', ['medium', 'low'])]"/>
+                <separator/>
+                <filter string="Today" name="today" domain="[('create_date', '>=', context_today().strftime('%Y-%m-%d'))]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Assistant" name="group_assistant" context="{'group_by': 'assistant_id'}"/>
+                    <filter string="State" name="group_state" context="{'group_by': 'state'}"/>
+                    <filter string="Type" name="group_type" context="{'group_by': 'task_type'}"/>
+                    <filter string="Source" name="group_source" context="{'group_by': 'source'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- AI Task Action -->
+    <record id="ai_task_action" model="ir.actions.act_window">
+        <field name="name">AI Tasks</field>
+        <field name="res_model">ai.task</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="ai_task_view_search"/>
+        <field name="context">{'search_default_today': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No AI tasks yet
+            </p>
+            <p>
+                Tasks are created when AI assistants receive messages via email, Slack, or API.
+            </p>
+        </field>
+    </record>
+</odoo>

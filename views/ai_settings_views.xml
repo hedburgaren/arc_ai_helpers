@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- AI Settings List View -->
+    <record id="ai_settings_view_list" model="ir.ui.view">
+        <field name="name">ai.settings.list</field>
+        <field name="model">ai.settings</field>
+        <field name="arch" type="xml">
+            <list string="AI Settings">
+                <field name="provider"/>
+                <field name="default_model"/>
+                <field name="active"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- AI Settings Form View -->
+    <record id="ai_settings_view_form" model="ir.ui.view">
+        <field name="name">ai.settings.form</field>
+        <field name="model">ai.settings</field>
+        <field name="arch" type="xml">
+            <form string="AI Settings">
+                <sheet>
+                    <group>
+                        <group string="Provider">
+                            <field name="provider"/>
+                            <field name="api_key" password="True" groups="base.group_system"/>
+                            <field name="api_endpoint" invisible="provider not in ('azure', 'ollama', 'custom')"/>
+                            <field name="default_model"/>
+                            <field name="active"/>
+                        </group>
+                        <group string="Company">
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <group string="Privacy">
+                        <field name="enable_redaction"/>
+                        <field name="redaction_patterns" invisible="not enable_redaction"/>
+                    </group>
+                    <group string="Limits">
+                        <field name="token_limit"/>
+                        <field name="request_limit_daily"/>
+                    </group>
+                    <group string="Default System Prompt">
+                        <field name="system_prompt" nolabel="1"/>
+                    </group>
+                    <separator string="Integrations"/>
+                    <group>
+                        <group string="n8n">
+                            <field name="n8n_base_url"/>
+                            <field name="n8n_api_key" password="True" groups="base.group_system"/>
+                            <button name="action_test_n8n_connection" type="object" string="Test n8n" class="btn-secondary"/>
+                        </group>
+                        <group string="Qdrant">
+                            <field name="qdrant_url"/>
+                            <field name="qdrant_api_key" password="True" groups="base.group_system"/>
+                            <button name="action_test_qdrant_connection" type="object" string="Test Qdrant" class="btn-secondary"/>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_test_connection" type="object" string="Test AI Connection" class="btn-primary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- AI Settings Action -->
+    <record id="ai_settings_action" model="ir.actions.act_window">
+        <field name="name">AI Settings</field>
+        <field name="res_model">ai.settings</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Configure AI Provider Settings
+            </p>
+            <p>
+                Set up your AI provider (OpenAI, Anthropic, Ollama, etc.) and integration settings.
+            </p>
+        </field>
+    </record>
+</odoo>

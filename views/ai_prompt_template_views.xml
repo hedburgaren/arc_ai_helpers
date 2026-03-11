@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- AI Prompt Template List View -->
+    <record id="ai_prompt_template_view_list" model="ir.ui.view">
+        <field name="name">ai.prompt.template.list</field>
+        <field name="model">ai.prompt.template</field>
+        <field name="arch" type="xml">
+            <list string="Prompt Templates">
+                <field name="name"/>
+                <field name="category" widget="badge"/>
+                <field name="version"/>
+                <field name="usage_count"/>
+                <field name="last_used"/>
+                <field name="active" column_invisible="1"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- AI Prompt Template Form View -->
+    <record id="ai_prompt_template_view_form" model="ir.ui.view">
+        <field name="name">ai.prompt.template.form</field>
+        <field name="model">ai.prompt.template</field>
+        <field name="arch" type="xml">
+            <form string="Prompt Template">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_versions" type="object" class="oe_stat_button" icon="fa-history">
+                            <field name="version" widget="statinfo" string="Version"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="Template Name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="category"/>
+                            <field name="description"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <field name="ai_model" placeholder="Leave empty for default"/>
+                            <field name="temperature"/>
+                            <field name="max_tokens"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Template" name="template">
+                            <group string="System Prompt">
+                                <field name="system_prompt" nolabel="1" placeholder="System-level instructions for the AI..."/>
+                            </group>
+                            <group string="User Prompt Template">
+                                <field name="user_prompt" nolabel="1" placeholder="Template with {placeholders} for dynamic content..."/>
+                            </group>
+                            <group string="Variables">
+                                <field name="variables" placeholder="Comma-separated list: name,email,subject"/>
+                            </group>
+                        </page>
+                        <page string="Usage" name="usage">
+                            <group>
+                                <field name="usage_count"/>
+                                <field name="last_used"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- AI Prompt Template Search View -->
+    <record id="ai_prompt_template_view_search" model="ir.ui.view">
+        <field name="name">ai.prompt.template.search</field>
+        <field name="model">ai.prompt.template</field>
+        <field name="arch" type="xml">
+            <search string="Prompt Templates">
+                <field name="name"/>
+                <field name="category"/>
+                <filter string="Active" name="active" domain="[('active', '=', True)]"/>
+                <filter string="Archived" name="archived" domain="[('active', '=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Category" name="group_category" context="{'group_by': 'category'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- AI Prompt Template Action -->
+    <record id="ai_prompt_template_action" model="ir.actions.act_window">
+        <field name="name">Prompt Templates</field>
+        <field name="res_model">ai.prompt.template</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="ai_prompt_template_view_search"/>
+        <field name="context">{'search_default_active': 1}</field>
+    </record>
+</odoo>

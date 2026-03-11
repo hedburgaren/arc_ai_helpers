@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Sequence for AI Tasks -->
+        <record id="seq_ai_task" model="ir.sequence">
+            <field name="name">AI Task</field>
+            <field name="code">ai.task</field>
+            <field name="prefix">TASK-</field>
+            <field name="padding">6</field>
+        </record>
+
+        <!-- Default Prompt Templates -->
+        <record id="prompt_template_email_reply" model="ai.prompt.template">
+            <field name="name">Email Reply</field>
+            <field name="category">email</field>
+            <field name="description">Generate a professional email reply</field>
+            <field name="system_prompt">You are a professional assistant helping to write email replies. Be polite, clear, and concise. Match the tone of the original email.</field>
+            <field name="user_prompt">Write a reply to this email:
+
+From: {from_email}
+Subject: {subject}
+
+{body}
+
+Reply should address the sender's questions/concerns professionally.</field>
+            <field name="variables">from_email,subject,body</field>
+            <field name="temperature">0.7</field>
+            <field name="max_tokens">500</field>
+        </record>
+
+        <record id="prompt_template_summary" model="ai.prompt.template">
+            <field name="name">Text Summary</field>
+            <field name="category">summary</field>
+            <field name="description">Summarize text content</field>
+            <field name="system_prompt">You are a helpful assistant that creates clear, concise summaries. Focus on key points and main ideas.</field>
+            <field name="user_prompt">Summarize the following text in {length} (short/medium/long):
+
+{text}
+
+Summary:</field>
+            <field name="variables">text,length</field>
+            <field name="temperature">0.3</field>
+            <field name="max_tokens">300</field>
+        </record>
+
+        <record id="prompt_template_translation" model="ai.prompt.template">
+            <field name="name">Translation</field>
+            <field name="category">translation</field>
+            <field name="description">Translate text between languages</field>
+            <field name="system_prompt">You are a professional translator. Translate accurately while maintaining the original tone and meaning.</field>
+            <field name="user_prompt">Translate the following text from {source_language} to {target_language}:
+
+{text}
+
+Translation:</field>
+            <field name="variables">text,source_language,target_language</field>
+            <field name="temperature">0.3</field>
+            <field name="max_tokens">1000</field>
+        </record>
+
+        <record id="prompt_template_product_description" model="ai.prompt.template">
+            <field name="name">Product Description</field>
+            <field name="category">content</field>
+            <field name="description">Generate product descriptions</field>
+            <field name="system_prompt">You are a B2B copywriter specializing in industrial products. Write clear, technical, and professional product descriptions. Avoid marketing fluff and AI clichés.</field>
+            <field name="user_prompt">Write a product description for:
+
+Product: {product_name}
+Category: {category}
+Technical specs: {specs}
+Target audience: {audience}
+
+The description should be {length} words and highlight key benefits for industrial buyers.</field>
+            <field name="variables">product_name,category,specs,audience,length</field>
+            <field name="temperature">0.6</field>
+            <field name="max_tokens">500</field>
+        </record>
+
+        <record id="prompt_template_support_response" model="ai.prompt.template">
+            <field name="name">Support Response</field>
+            <field name="category">support</field>
+            <field name="description">Generate customer support responses</field>
+            <field name="system_prompt">You are a helpful customer support agent. Be empathetic, solution-oriented, and professional. If you don't know the answer, say so and offer to escalate.</field>
+            <field name="user_prompt">Customer inquiry:
+{inquiry}
+
+Customer history:
+{history}
+
+Generate a helpful response that addresses their concern.</field>
+            <field name="variables">inquiry,history</field>
+            <field name="temperature">0.5</field>
+            <field name="max_tokens">400</field>
+        </record>
+    </data>
+</odoo>

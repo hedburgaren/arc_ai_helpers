@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_ai_helpers_root"
+              name="AI Helpers"
+              web_icon="arc_ai_helpers,static/description/icon.png"
+              sequence="100"/>
+
+    <!-- Assistants Menu -->
+    <menuitem id="menu_ai_assistants"
+              name="Assistants"
+              parent="menu_ai_helpers_root"
+              action="ai_assistant_action"
+              sequence="10"/>
+
+    <!-- Tasks Menu -->
+    <menuitem id="menu_ai_tasks"
+              name="Tasks"
+              parent="menu_ai_helpers_root"
+              action="ai_task_action"
+              sequence="20"/>
+
+    <!-- Configuration Menu -->
+    <menuitem id="menu_ai_config"
+              name="Configuration"
+              parent="menu_ai_helpers_root"
+              sequence="90"
+              groups="group_ai_manager"/>
+
+    <menuitem id="menu_ai_settings"
+              name="Settings"
+              parent="menu_ai_config"
+              action="ai_settings_action"
+              sequence="10"
+              groups="group_ai_admin"/>
+
+    <menuitem id="menu_ai_prompt_templates"
+              name="Prompt Templates"
+              parent="menu_ai_config"
+              action="ai_prompt_template_action"
+              sequence="20"/>
+
+    <menuitem id="menu_ai_logs"
+              name="Logs"
+              parent="menu_ai_config"
+              action="ai_log_action"
+              sequence="30"/>
+</odoo>
