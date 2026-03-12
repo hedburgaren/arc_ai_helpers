@@ -300,7 +300,10 @@ class AiAssistant(models.Model):
             
             partner = self.env['res.partner'].sudo().create(partner_vals)
             
-            # Create user
+            # Create user - generate a random password (user won't need it)
+            import secrets
+            random_password = secrets.token_urlsafe(32)
+            
             user_vals = {
                 'name': f"{self.name} (AI)",
                 'login': self.email,
@@ -310,8 +313,7 @@ class AiAssistant(models.Model):
                 'company_ids': [(4, self.company_id.id)],
                 'groups_id': group_ids,
                 'active': True,
-                # AI users don't need portal access or password
-                'password': False,
+                'password': random_password,  # Random password, AI users authenticate via API
                 'share': True,  # Portal-like user (no backend access)
             }
             
