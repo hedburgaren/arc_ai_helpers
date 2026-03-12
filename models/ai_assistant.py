@@ -161,11 +161,12 @@ class AiAssistant(models.Model):
         readonly=True,
         help="Auto-created Odoo user for this assistant (allows @mentions, Discuss, etc.)"
     )
-    employee_id = fields.Many2one(
-        'hr.employee',
-        string='Employee Record',
+    # Note: employee_id only works if hr module is installed
+    # We use a Char field to store the ID to avoid dependency issues
+    employee_id = fields.Integer(
+        string='Employee Record ID',
         readonly=True,
-        help="Auto-created employee record (if HR module installed)"
+        help="ID of auto-created employee record (if HR module installed)"
     )
     create_odoo_user = fields.Boolean(
         string='Create Odoo User',
@@ -372,7 +373,7 @@ class AiAssistant(models.Model):
                 employee_vals['image_1920'] = self.image_128
             
             employee = self.env['hr.employee'].sudo().create(employee_vals)
-            self.employee_id = employee
+            self.employee_id = employee.id  # Store ID as Integer
             _logger.info("Created HR employee for AI Assistant: %s", self.name)
             return employee
             
