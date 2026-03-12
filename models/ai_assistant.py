@@ -329,8 +329,10 @@ class AiAssistant(models.Model):
             return user
             
         except Exception as e:
-            _logger.error("Failed to create Odoo user for AI Assistant %s: %s", self.name, str(e))
-            return False
+            import traceback
+            _logger.error("Failed to create Odoo user for AI Assistant %s: %s\n%s", 
+                         self.name, str(e), traceback.format_exc())
+            raise UserError(_("Failed to create Odoo user: %s") % str(e))
     
     def _create_hr_employee(self):
         """
@@ -401,17 +403,16 @@ class AiAssistant(models.Model):
         if self.user_id:
             raise UserError(_("This assistant already has an Odoo user: %s") % self.user_id.login)
         user = self._create_odoo_user()
-        if user:
-            return {
-                'type': 'ir.actions.client',
-                'tag': 'display_notification',
-                'params': {
-                    'title': _('Success'),
-                    'message': _('Created Odoo user: %s') % user.login,
-                    'type': 'success',
-                }
+        # _create_odoo_user now raises UserError on failure, so if we get here it succeeded
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'title': _('Success'),
+                'message': _('Created Odoo user: %s') % user.login,
+                'type': 'success',
             }
-        raise UserError(_("Failed to create Odoo user. Check logs for details."))
+        }
     
     def action_view_tasks(self):
         """View tasks assigned to this assistant."""
