@@ -26,6 +26,8 @@
             <form string="AI Assistant">
                 <header>
                     <button name="action_send_test_message" type="object" string="Test" class="btn-secondary"/>
+                    <button name="action_create_odoo_user" type="object" string="Create Odoo User" 
+                            class="btn-primary" invisible="user_id"/>
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
@@ -46,11 +48,15 @@
                     <group>
                         <group string="Identity">
                             <field name="specialization"/>
+                            <field name="sub_specialization" placeholder="e.g., Blog Writer, Translator"/>
                             <field name="language"/>
                             <field name="description"/>
                         </group>
-                        <group string="Company">
+                        <group string="Company &amp; User">
                             <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="create_odoo_user"/>
+                            <field name="user_id"/>
+                            <field name="employee_id"/>
                             <field name="active"/>
                             <field name="last_activity" readonly="1"/>
                         </group>
@@ -70,6 +76,30 @@
                                 <group string="n8n">
                                     <field name="n8n_workflow_id"/>
                                     <field name="n8n_webhook_url"/>
+                                </group>
+                            </group>
+                            <group>
+                                <group string="Gmail">
+                                    <field name="gmail_label" placeholder="e.g., alex"/>
+                                    <field name="gmail_alias"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="External Targets" name="external_targets">
+                            <group>
+                                <group string="Target Configuration">
+                                    <field name="target_type"/>
+                                </group>
+                            </group>
+                            <group invisible="target_type != 'wordpress'">
+                                <group string="WordPress Settings">
+                                    <field name="wordpress_site_url" placeholder="https://chrille.nu"/>
+                                    <field name="wordpress_user"/>
+                                </group>
+                            </group>
+                            <group invisible="target_type != 'postiz'">
+                                <group string="Postiz Settings">
+                                    <field name="postiz_brand_id"/>
                                 </group>
                             </group>
                         </page>

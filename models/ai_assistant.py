@@ -56,7 +56,13 @@ class AiAssistant(models.Model):
         ('research', 'Research Assistant'),
         ('code', 'Code Assistant'),
         ('elearning', 'eLearning Creator'),
+        ('technical', 'Technical Specialist'),
     ], string='Specialization', default='general', required=True, tracking=True)
+    
+    sub_specialization = fields.Char(
+        string='Sub-specialization',
+        help="Further specialization (e.g., 'Blog Writer', 'Translator', 'PTFE Expert')"
+    )
     
     description = fields.Text(
         string='Description',
@@ -148,12 +154,74 @@ class AiAssistant(models.Model):
         help="Company this assistant belongs to (tenant isolation)"
     )
     
+    # Virtual Employee - linked Odoo user
+    user_id = fields.Many2one(
+        'res.users',
+        string='Odoo User',
+        readonly=True,
+        help="Auto-created Odoo user for this assistant (allows @mentions, Discuss, etc.)"
+    )
+    employee_id = fields.Many2one(
+        'hr.employee',
+        string='Employee Record',
+        readonly=True,
+        help="Auto-created employee record (if HR module installed)"
+    )
+    create_odoo_user = fields.Boolean(
+        string='Create Odoo User',
+        default=True,
+        help="Automatically create an Odoo user for this assistant"
+    )
+    
+    # External Target (for non-Odoo destinations)
+    target_type = fields.Selection([
+        ('odoo', 'Odoo Internal'),
+        ('wordpress', 'WordPress Site'),
+        ('postiz', 'Postiz (Social Media)'),
+        ('external_api', 'External API'),
+    ], string='Target Type', default='odoo',
+        help="Where this assistant publishes content")
+    
+    wordpress_site_url = fields.Char(
+        string='WordPress Site URL',
+        help="WordPress site URL (e.g., https://chrille.nu)"
+    )
+    wordpress_user = fields.Char(
+        string='WordPress User',
+        help="WordPress username for publishing"
+    )
+    postiz_brand_id = fields.Char(
+        string='Postiz Brand ID',
+        help="Postiz brand ID for social media publishing"
+    )
+    
+    # Gmail Integration
+    gmail_label = fields.Char(
+        string='Gmail Label',
+        help="Gmail label/tag that routes to this assistant (e.g., 'alex')"
+    )
+    gmail_alias = fields.Char(
+        string='Gmail Alias',
+        compute='_compute_gmail_alias',
+        help="Full email alias (e.g., alex@arcgruppen.se)"
+    )
+    
     _sql_constraints = [
         ('email_company_uniq', 'unique(email, company_id)',
          'Email must be unique per company!'),
         ('name_company_uniq', 'unique(name, company_id)',
          'Assistant name must be unique per company!'),
     ]
+    
+    @api.depends('email')
+    def _compute_gmail_alias(self):
+        for assistant in self:
+            if assistant.gmail_label and assistant.email:
+                # Extract domain from email
+                domain = assistant.email.split('@')[-1] if '@' in assistant.email else ''
+                assistant.gmail_alias = f"{assistant.gmail_label}@{domain}" if domain else ''
+            else:
+                assistant.gmail_alias = assistant.email or ''
     
     @api.depends('company_id')
     def _compute_task_count(self):
@@ -182,7 +250,167 @@ class AiAssistant(models.Model):
                 company_slug = ''.join(c if c.isalnum() else '_' for c in company.name.lower())
                 vals['qdrant_collection'] = f"{company_slug}_{safe_name}_memory"
         
-        return super().create(vals_list)
+        assistants = super().create(vals_list)
+        
+        # Auto-create Odoo users for assistants
+        for assistant in assistants:
+            if assistant.create_odoo_user and not assistant.user_id:
+                assistant._create_odoo_user()
+        
+        return assistants
+    
+    def _create_odoo_user(self):
+        """
+        Create an Odoo user for this AI assistant.
+        This allows the assistant to be @mentioned, appear in Discuss, etc.
+        """
+        self.ensure_one()
+        
+        if self.user_id:
+            return self.user_id
+        
+        # Check if user with this email already exists
+        existing_user = self.env['res.users'].sudo().search([
+            ('login', '=', self.email)
+        ], limit=1)
+        
+        if existing_user:
+            self.user_id = existing_user
+            _logger.info("AI Assistant %s linked to existing user %s", self.name, existing_user.login)
+            return existing_user
+        
+        # Create new user
+        try:
+            # Get or create AI Assistants group
+            ai_group = self.env.ref('arc_ai_helpers.group_ai_assistant_bot', raise_if_not_found=False)
+            group_ids = [(4, ai_group.id)] if ai_group else []
+            
+            # Create partner first
+            partner_vals = {
+                'name': f"{self.name} (AI)",
+                'email': self.email,
+                'is_company': False,
+                'company_id': self.company_id.id,
+                'type': 'contact',
+                'comment': f"AI Assistant - {self.get_selection_label('specialization')}",
+            }
+            if self.image_128:
+                partner_vals['image_1920'] = self.image_128
+            
+            partner = self.env['res.partner'].sudo().create(partner_vals)
+            
+            # Create user
+            user_vals = {
+                'name': f"{self.name} (AI)",
+                'login': self.email,
+                'email': self.email,
+                'partner_id': partner.id,
+                'company_id': self.company_id.id,
+                'company_ids': [(4, self.company_id.id)],
+                'groups_id': group_ids,
+                'active': True,
+                # AI users don't need portal access or password
+                'password': False,
+                'share': True,  # Portal-like user (no backend access)
+            }
+            
+            user = self.env['res.users'].sudo().with_context(
+                no_reset_password=True,
+                mail_create_nosubscribe=True,
+            ).create(user_vals)
+            
+            self.user_id = user
+            _logger.info("Created Odoo user for AI Assistant: %s (%s)", self.name, self.email)
+            
+            # Create HR employee if HR module is installed
+            self._create_hr_employee()
+            
+            return user
+            
+        except Exception as e:
+            _logger.error("Failed to create Odoo user for AI Assistant %s: %s", self.name, str(e))
+            return False
+    
+    def _create_hr_employee(self):
+        """
+        Create an HR employee record for this AI assistant (if HR module installed).
+        """
+        self.ensure_one()
+        
+        if self.employee_id:
+            return self.employee_id
+        
+        # Check if HR module is installed
+        if 'hr.employee' not in self.env:
+            return False
+        
+        try:
+            # Map specialization to department (if departments exist)
+            department = False
+            dept_mapping = {
+                'sales': 'Sales',
+                'support': 'Support',
+                'hseq': 'HSEQ',
+                'content': 'Marketing',
+                'technical': 'Technical',
+            }
+            if self.specialization in dept_mapping:
+                department = self.env['hr.department'].sudo().search([
+                    ('name', 'ilike', dept_mapping[self.specialization]),
+                    ('company_id', '=', self.company_id.id)
+                ], limit=1)
+            
+            employee_vals = {
+                'name': f"{self.name} (AI)",
+                'work_email': self.email,
+                'company_id': self.company_id.id,
+                'department_id': department.id if department else False,
+                'job_title': f"AI {self.get_selection_label('specialization')}",
+                'user_id': self.user_id.id if self.user_id else False,
+            }
+            if self.image_128:
+                employee_vals['image_1920'] = self.image_128
+            
+            employee = self.env['hr.employee'].sudo().create(employee_vals)
+            self.employee_id = employee
+            _logger.info("Created HR employee for AI Assistant: %s", self.name)
+            return employee
+            
+        except Exception as e:
+            _logger.error("Failed to create HR employee for AI Assistant %s: %s", self.name, str(e))
+            return False
+    
+    def get_selection_label(self, field_name):
+        """Get the label for a selection field value."""
+        self.ensure_one()
+        field = self._fields.get(field_name)
+        if field and hasattr(field, 'selection'):
+            selection = field.selection
+            if callable(selection):
+                selection = selection(self)
+            value = getattr(self, field_name)
+            for key, label in selection:
+                if key == value:
+                    return label
+        return ''
+    
+    def action_create_odoo_user(self):
+        """Manual action to create Odoo user for this assistant."""
+        self.ensure_one()
+        if self.user_id:
+            raise UserError(_("This assistant already has an Odoo user: %s") % self.user_id.login)
+        user = self._create_odoo_user()
+        if user:
+            return {
+                'type': 'ir.actions.client',
+                'tag': 'display_notification',
+                'params': {
+                    'title': _('Success'),
+                    'message': _('Created Odoo user: %s') % user.login,
+                    'type': 'success',
+                }
+            }
+        raise UserError(_("Failed to create Odoo user. Check logs for details."))
     
     def action_view_tasks(self):
         """View tasks assigned to this assistant."""

@@ -31,6 +31,13 @@
             <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
             <field name="comment">Full access to AI configuration including API keys</field>
         </record>
+
+        <!-- AI Assistant Bot Group (for auto-created AI users) -->
+        <record id="group_ai_assistant_bot" model="res.groups">
+            <field name="name">AI Assistant (Bot)</field>
+            <field name="category_id" ref="module_category_ai_helpers"/>
+            <field name="comment">Auto-created users for AI assistants. Minimal permissions, used for @mentions and Discuss integration.</field>
+        </record>
     </data>
 
     <data noupdate="0">
