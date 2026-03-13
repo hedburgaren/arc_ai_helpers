@@ -39,6 +39,8 @@ Data stays isolated per tenant (company) - no cross-contamination.
         'base',
         'mail',
         'contacts',
+        'account',
+        'product',
     ],
     'data': [
         # Security
@@ -46,12 +48,14 @@ Data stays isolated per tenant (company) - no cross-contamination.
         'security/ir.model.access.csv',
         # Data
         'data/ai_assistant_data.xml',
+        'data/ai_domain_data.xml',
         # Views
         'views/ai_assistant_views.xml',
         'views/ai_settings_views.xml',
         'views/ai_task_views.xml',
         'views/ai_log_views.xml',
         'views/ai_prompt_template_views.xml',
+        'views/ai_domain_views.xml',
         'views/menu.xml',
     ],
     'demo': [],

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Default AI Service Product -->
+    <record id="product_ai_service" model="product.product" forcecreate="0">
+        <field name="name">AI-tjänster (per 1000 tokens)</field>
+        <field name="type">service</field>
+        <field name="list_price">0.50</field>
+        <field name="default_code">AI-TOKEN</field>
+        <field name="description_sale">AI-assistenttjänster baserat på token-användning</field>
+    </record>
+
+    <!-- Cron: Sync domains from NocoDB (daily) -->
+    <record id="ir_cron_sync_domains" model="ir.cron">
+        <field name="name">AI Domains: Sync from NocoDB</field>
+        <field name="model_id" ref="model_arc_ai_domain"/>
+        <field name="state">code</field>
+        <field name="code">model.cron_sync_all_from_nocodb()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="active">True</field>
+        <field name="nextcall" eval="(DateTime.now() + relativedelta(days=1)).strftime('%Y-%m-%d 06:00:00')"/>
+    </record>
+
+    <!-- Cron: Monthly invoicing (1st of each month) -->
+    <record id="ir_cron_monthly_invoicing" model="ir.cron">
+        <field name="name">AI Domains: Monthly Invoicing</field>
+        <field name="model_id" ref="model_arc_ai_domain"/>
+        <field name="state">code</field>
+        <field name="code">model.cron_monthly_invoicing()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">months</field>
+        <field name="numbercall">-1</field>
+        <field name="active">True</field>
+        <field name="nextcall" eval="(DateTime.now().replace(day=1) + relativedelta(months=1)).strftime('%Y-%m-%d 08:00:00')"/>
+    </record>
+</odoo>

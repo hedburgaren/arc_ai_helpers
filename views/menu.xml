@@ -20,6 +20,14 @@
               action="ai_task_action"
               sequence="20"/>
 
+    <!-- Domains Menu -->
+    <menuitem id="menu_ai_domains"
+              name="Domains"
+              parent="menu_ai_helpers_root"
+              action="action_arc_ai_domain"
+              sequence="30"
+              groups="group_ai_manager"/>
+
     <!-- Configuration Menu -->
     <menuitem id="menu_ai_config"
               name="Configuration"

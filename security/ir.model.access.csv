@@ -17,3 +17,6 @@ access_ai_context_user,ai.context.user,model_ai_context,group_ai_user,1,1,1,0
 access_ai_context_manager,ai.context.manager,model_ai_context,group_ai_manager,1,1,1,1
 access_ai_context_message_user,ai.context.message.user,model_ai_context_message,group_ai_user,1,1,1,0
 access_ai_context_message_manager,ai.context.message.manager,model_ai_context_message,group_ai_manager,1,1,1,1
+access_ai_domain_user,arc.ai.domain.user,model_arc_ai_domain,group_ai_user,1,0,0,0
+access_ai_domain_manager,arc.ai.domain.manager,model_arc_ai_domain,group_ai_manager,1,1,1,0
+access_ai_domain_admin,arc.ai.domain.admin,model_arc_ai_domain,group_ai_admin,1,1,1,1
