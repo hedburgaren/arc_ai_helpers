@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <!-- Default AI Service Product -->
-    <record id="product_ai_service" model="product.product" forcecreate="0">
-        <field name="name">AI-tjänster (per 1000 tokens)</field>
-        <field name="type">service</field>
-        <field name="list_price">0.50</field>
-        <field name="default_code">AI-TOKEN</field>
-        <field name="description_sale">AI-assistenttjänster baserat på token-användning</field>
-    </record>
-
+<odoo noupdate="1">
     <!-- Cron: Sync domains from NocoDB (daily) -->
     <record id="ir_cron_sync_domains" model="ir.cron">
         <field name="name">AI Domains: Sync from NocoDB</field>
