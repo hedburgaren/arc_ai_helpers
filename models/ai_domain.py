@@ -3,11 +3,17 @@ from odoo import models, fields, api
 from odoo.exceptions import UserError
 import requests
 import logging
+from urllib.parse import quote as url_quote
 
 _logger = logging.getLogger(__name__)
 
-NOCODB_URL = "https://nocodb.hedburgaren.se"
-NOCODB_TABLE = "migavxhndqhdb6k"
+def _get_nocodb_url(env):
+    return env['ir.config_parameter'].sudo().get_param(
+        'arc_ai_helpers.nocodb_url', 'https://nocodb.hedburgaren.se')
+
+def _get_nocodb_table(env):
+    return env['ir.config_parameter'].sudo().get_param(
+        'arc_ai_helpers.nocodb_table', 'migavxhndqhdb6k')
 
 
 class ArcAiDomain(models.Model):
@@ -154,8 +160,8 @@ class ArcAiDomain(models.Model):
         
         try:
             resp = requests.get(
-                f"{NOCODB_URL}/api/v2/tables/{NOCODB_TABLE}/records",
-                params={'where': f'(Name,eq,{self.name})'},
+                f"{_get_nocodb_url(self.env)}/api/v2/tables/{_get_nocodb_table(self.env)}/records",
+                params={'where': f'(Name,eq,{url_quote(self.name)})'},
                 headers={'xc-token': api_key},
                 timeout=10
             )
@@ -233,7 +239,7 @@ class ArcAiDomain(models.Model):
             }
             
             resp = requests.patch(
-                f"{NOCODB_URL}/api/v2/tables/{NOCODB_TABLE}/records",
+                f"{_get_nocodb_url(self.env)}/api/v2/tables/{_get_nocodb_table(self.env)}/records",
                 json=payload,
                 headers={'xc-token': api_key, 'Content-Type': 'application/json'},
                 timeout=10
@@ -256,8 +262,8 @@ class ArcAiDomain(models.Model):
         
         try:
             resp = requests.get(
-                f"{NOCODB_URL}/api/v2/tables/{NOCODB_TABLE}/records",
-                params={'where': f'(Name,eq,{self.name})'},
+                f"{_get_nocodb_url(self.env)}/api/v2/tables/{_get_nocodb_table(self.env)}/records",
+                params={'where': f'(Name,eq,{url_quote(self.name)})'},
                 headers={'xc-token': api_key},
                 timeout=10
             )
@@ -327,7 +333,7 @@ class ArcAiDomain(models.Model):
         
         try:
             resp = requests.get(
-                f"{NOCODB_URL}/api/v2/tables/{NOCODB_TABLE}/records",
+                f"{_get_nocodb_url(self.env)}/api/v2/tables/{_get_nocodb_table(self.env)}/records",
                 headers={'xc-token': api_key},
                 timeout=30
             )
@@ -388,9 +394,14 @@ class ArcAiDomain(models.Model):
         
         # Reset monthly usage in NocoDB
         try:
+            n8n_url = self.env['ir.config_parameter'].sudo().get_param(
+                'arc_ai_helpers.n8n_webhook_url', 'https://n8n.hedburgaren.se')
+            n8n_api_key = self.env['ir.config_parameter'].sudo().get_param(
+                'arc_ai_helpers.n8n_api_key', '')
             requests.post(
-                "https://n8n.hedburgaren.se/webhook/domain-manager",
+                f"{n8n_url}/webhook/domain-manager",
                 json={'action': 'reset_monthly'},
+                headers={'Authorization': f'Bearer {n8n_api_key}'} if n8n_api_key else {},
                 timeout=30
             )
         except Exception as e:
