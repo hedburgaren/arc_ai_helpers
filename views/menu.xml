@@ -3,7 +3,7 @@
     <!-- Main Menu -->
     <menuitem id="menu_ai_helpers_root"
               name="AI Helpers"
-              web_icon="arc_ai_helpers,static/description/icon.png"
+              web_icon="arc_ai_helpers,static/description/icon.svg"
               sequence="100"/>
 
     <!-- Assistants Menu -->
