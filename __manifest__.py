@@ -49,6 +49,7 @@ Data stays isolated per tenant (company) - no cross-contamination.
         # Data
         'data/ai_assistant_data.xml',
         'data/ai_domain_data.xml',
+        'data/ai_personas_data.xml',
         # Views
         'views/ai_assistant_views.xml',
         'views/ai_settings_views.xml',
