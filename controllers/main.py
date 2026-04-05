@@ -15,17 +15,24 @@ _logger = logging.getLogger(__name__)
 API_KEY_PARAM = 'arc_ai_helpers.api_bearer_token'
 
 
+def _get_json_params():
+    """Extract params from JSON-RPC body or raw JSON body."""
+    raw = json.loads(request.httprequest.get_data(as_text=True) or '{}')
+    # JSON-RPC wraps data in params key
+    return raw.get('params', raw)
+
+
 def require_bearer_token(func):
     """Decorator: validate Bearer token from ir.config_parameter."""
     @functools.wraps(func)
     def wrapper(self, *args, **kwargs):
         auth_header = request.httprequest.headers.get('Authorization', '')
         if not auth_header.startswith('Bearer '):
-            return {'success': False, 'error': 'Missing Bearer token'}, 401
+            return {'success': False, 'error': 'Missing Bearer token'}
         token = auth_header[7:]
         expected = request.env['ir.config_parameter'].sudo().get_param(API_KEY_PARAM)
         if not expected or token != expected:
-            return {'success': False, 'error': 'Invalid Bearer token'}, 401
+            return {'success': False, 'error': 'Invalid Bearer token'}
         return func(self, *args, **kwargs)
     return wrapper
 
@@ -49,7 +56,7 @@ class AiHelpersController(http.Controller):
         }
         """
         try:
-            data = request.get_json_data()
+            data = _get_json_params()
             task_id = data.get('task_id')
 
             if not task_id:
@@ -83,7 +90,7 @@ class AiHelpersController(http.Controller):
         }
         """
         try:
-            data = request.get_json_data()
+            data = _get_json_params()
 
             required = ['assistant_id', 'input_text']
             for field in required:
@@ -159,7 +166,7 @@ class AiHelpersController(http.Controller):
         }
         """
         try:
-            data = request.get_json_data()
+            data = _get_json_params()
 
             assistant = request.env['ai.assistant'].sudo().browse(assistant_id)
             if not assistant.exists():
@@ -243,7 +250,7 @@ class AiHelpersController(http.Controller):
         }
         """
         try:
-            data = request.get_json_data()
+            data = _get_json_params()
             to_email = data.get('to', '').lower()
 
             # Find assistant by email
@@ -285,7 +292,7 @@ class AiHelpersController(http.Controller):
         }
         """
         try:
-            data = request.get_json_data()
+            data = _get_json_params()
 
             # Handle Slack URL verification
             if data.get('type') == 'url_verification':
