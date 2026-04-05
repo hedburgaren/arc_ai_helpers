@@ -41,6 +41,7 @@ Data stays isolated per tenant (company) - no cross-contamination.
         'contacts',
         'account',
         'product',
+        'sale_management',
         'stock',
     ],
     'data': [

@@ -12,17 +12,5 @@
             <field name="numbercall">-1</field>
             <field name="active">True</field>
         </record>
-
-        <!-- Cron: Check contract renewals daily at 06:30 -->
-        <record id="cron_check_contract_renewals" model="ir.cron">
-            <field name="name">AI: Check Contract Renewals</field>
-            <field name="model_id" ref="model_arc_contract"/>
-            <field name="state">code</field>
-            <field name="code">model._cron_check_contract_renewals()</field>
-            <field name="interval_number">1</field>
-            <field name="interval_type">days</field>
-            <field name="numbercall">-1</field>
-            <field name="active">True</field>
-        </record>
     </data>
 </odoo>
