@@ -1,0 +1,753 @@
+# Translation of arc_ai_helpers to es_ES
+# This file is distributed under the same license as the arc_ai_helpers module.
+msgid ""
+msgstr ""
+"Project-Id-Version: arc_ai_helpers\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 20:00+0000\n"
+"PO-Revision-Date: 2026-04-06 20:00+0000\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. module: arc_ai_helpers
+msgid "AI"
+msgstr "IA"
+
+#. module: arc_ai_helpers
+msgid "AI Administrator"
+msgstr "Administrador de IA"
+
+#. module: arc_ai_helpers
+msgid "AI Assistant"
+msgstr "Asistente de IA"
+
+#. module: arc_ai_helpers
+msgid "AI Assistant (Bot)"
+msgstr "Asistente de IA (Bot)"
+
+#. module: arc_ai_helpers
+msgid "AI Assistant: Company"
+msgstr "Asistente de IA: Compañía"
+
+#. module: arc_ai_helpers
+msgid "AI Assistants"
+msgstr "Asistentes de IA"
+
+#. module: arc_ai_helpers
+msgid "AI Configuration"
+msgstr "Configuración de IA"
+
+#. module: arc_ai_helpers
+msgid "AI Context: Company"
+msgstr "Contexto de IA: Compañía"
+
+#. module: arc_ai_helpers
+msgid "AI Domain"
+msgstr "Dominio de IA"
+
+#. module: arc_ai_helpers
+msgid "AI Domains"
+msgstr "Dominios de IA"
+
+#. module: arc_ai_helpers
+msgid "AI Guidelines"
+msgstr "Directrices de IA"
+
+#. module: arc_ai_helpers
+msgid "AI Helpers"
+msgstr "Ayudantes de IA"
+
+#. module: arc_ai_helpers
+msgid "AI Log"
+msgstr "Registro de IA"
+
+#. module: arc_ai_helpers
+msgid "AI Log: Company"
+msgstr "Registro de IA: Compañía"
+
+#. module: arc_ai_helpers
+msgid "AI Logs"
+msgstr "Registros de IA"
+
+#. module: arc_ai_helpers
+msgid "AI Manager"
+msgstr "Gerente de IA"
+
+#. module: arc_ai_helpers
+msgid "AI Processing"
+msgstr "Procesamiento de IA"
+
+#. module: arc_ai_helpers
+msgid "AI Prompt Template: Company"
+msgstr "Plantilla de invitación de IA: Compañía"
+
+#. module: arc_ai_helpers
+msgid "AI Settings"
+msgstr "Ajustes de IA"
+
+#. module: arc_ai_helpers
+msgid "AI Settings: Company"
+msgstr "Ajustes de IA: Compañía"
+
+#. module: arc_ai_helpers
+msgid "AI Task"
+msgstr "Tarea de IA"
+
+#. module: arc_ai_helpers
+msgid "AI Task: Company"
+msgstr "Tarea de IA: Compañía"
+
+#. module: arc_ai_helpers
+msgid "AI Tasks"
+msgstr "Tareas de IA"
+
+#. module: arc_ai_helpers
+msgid "AI User"
+msgstr "Usuario de IA"
+
+#. module: arc_ai_helpers
+msgid "AI processing completed."
+msgstr "Procesamiento de IA completado"
+
+#. module: arc_ai_helpers
+msgid "AI: Check Low Stock"
+msgstr "IA: Comprobación de stock bajo"
+
+#. module: arc_ai_helpers
+msgid "Active"
+msgstr "Activo"
+
+#. module: arc_ai_helpers
+msgid "Anthropic API key not configured"
+msgstr "La clave de API de Anthropic no está configurada"
+
+#. module: arc_ai_helpers
+msgid "Anthropic API key present - connection test passed"
+msgstr "Clave de API de Anthropic presente - prueba de conexión superada"
+
+#. module: arc_ai_helpers
+msgid "Approve"
+msgstr "Aprobar"
+
+#. module: arc_ai_helpers
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: arc_ai_helpers
+msgid "Assistant"
+msgstr "Asistente"
+
+#. module: arc_ai_helpers
+msgid "Azure OpenAI credentials present"
+msgstr "Las credenciales de Azure OpenAI están presentes"
+
+#. module: arc_ai_helpers
+msgid "Azure OpenAI requires both API key and endpoint"
+msgstr "Azure OpenAI requiere tanto la clave de API como el punto de conexión"
+
+#. module: arc_ai_helpers
+msgid "Basic Info"
+msgstr "Información básica"
+
+#. module: arc_ai_helpers
+msgid "Billable"
+msgstr "Facturable"
+
+#. module: arc_ai_helpers
+msgid "Billing"
+msgstr "Facturación"
+
+#. module: arc_ai_helpers
+msgid "Brand Profile"
+msgstr "Perfil de marca"
+
+#. module: arc_ai_helpers
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: arc_ai_helpers
+msgid "Cannot cancel completed or already cancelled tasks."
+msgstr "No se pueden cancelar tareas completadas o ya canceladas."
+
+#. module: arc_ai_helpers
+msgid "Category"
+msgstr "Categoría"
+
+#. module: arc_ai_helpers
+msgid "Code Reviewer"
+msgstr "Revisador de código"
+
+#. module: arc_ai_helpers
+msgid "Company"
+msgstr "Compañía"
+
+#. module: arc_ai_helpers
+msgid "Company &amp; User"
+msgstr "Compañía y usuario"
+
+#. module: arc_ai_helpers
+msgid "Completed"
+msgstr "Completado"
+
+#. module: arc_ai_helpers
+msgid "Connected! %d collections found."
+msgstr "Conectado! Se encontraron %d colecciones."
+
+#. module: arc_ai_helpers
+msgid "Connected! %d workflows found."
+msgstr "Conectado! Se encontraron %d flujos de trabajo."
+
+#. module: arc_ai_helpers
+msgid "Connection Test"
+msgstr "Prueba de conexión"
+
+#. module: arc_ai_helpers
+msgid "Connection Test Failed"
+msgstr "Prueba de conexión fallida"
+
+#. module: arc_ai_helpers
+msgid "Connection failed: %s"
+msgstr "Conexión fallida: %s"
+
+#. module: arc_ai_helpers
+msgid "Connection successful! (Mock provider - no actual API call)"
+msgstr ""
+"Conexión exitosa (Proveedor de simulación - no se realiza llamada a la API)"
+
+#. module: arc_ai_helpers
+msgid "Content"
+msgstr "Contenido"
+
+#. module: arc_ai_helpers
+msgid "Content Writer"
+msgstr "Escritor de contenido"
+
+#. module: arc_ai_helpers
+msgid "Context"
+msgstr "Contexto"
+
+#. module: arc_ai_helpers
+msgid "Create Odoo User"
+msgstr "Crear usuario de Odoo"
+
+#. module: arc_ai_helpers
+msgid "Created Odoo user: %s"
+msgstr "Se creó el usuario de Odoo: %s"
+
+#. module: arc_ai_helpers
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: arc_ai_helpers
+msgid "Date"
+msgstr "Fecha"
+
+#. module: arc_ai_helpers
+msgid "Default System Prompt"
+msgstr "Prompt del sistema predeterminado"
+
+#. module: arc_ai_helpers
+msgid "Details"
+msgstr "Detalles"
+
+#. module: arc_ai_helpers
+msgid "Email Reply"
+msgstr "Respuesta por correo electrónico"
+
+#. module: arc_ai_helpers
+msgid "Error"
+msgstr "Error"
+
+#. module: arc_ai_helpers
+msgid "Errors"
+msgstr "Errores"
+
+#. module: arc_ai_helpers
+msgid "External Targets"
+msgstr "Destinos externos"
+
+#. module: arc_ai_helpers
+msgid "Failed"
+msgstr "Fallido"
+
+#. module: arc_ai_helpers
+msgid "Failed to create Odoo user: %s"
+msgstr "No se pudo crear el usuario de Odoo: %s"
+
+#. module: arc_ai_helpers
+msgid "Failed to trigger workflow: %s"
+msgstr "No se pudo activar el flujo de trabajo: %s"
+
+#. module: arc_ai_helpers
+msgid "Feedback"
+msgstr "Comentarios"
+
+#. module: arc_ai_helpers
+msgid "Gmail"
+msgstr "Gmail"
+
+#. module: arc_ai_helpers
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: arc_ai_helpers
+msgid "Has Usage"
+msgstr "Tiene uso"
+
+#. module: arc_ai_helpers
+msgid "Hello %s, this is a test message."
+msgstr "Hola %s, este es un mensaje de prueba."
+
+#. module: arc_ai_helpers
+msgid "Identity"
+msgstr "Identidad"
+
+#. module: arc_ai_helpers
+msgid "Input"
+msgstr "Entrada"
+
+#. module: arc_ai_helpers
+msgid "Input/Output"
+msgstr "Entrada/Salida"
+
+#. module: arc_ai_helpers
+msgid "Integrations"
+msgstr "Integraciones"
+
+#. module: arc_ai_helpers
+msgid "Language"
+msgstr "Idioma"
+
+#. module: arc_ai_helpers
+msgid "Limits"
+msgstr "Límites"
+
+#. module: arc_ai_helpers
+msgid "Logs for %s"
+msgstr "Registros para %s"
+
+#. module: arc_ai_helpers
+msgid "Maximum retry count reached."
+msgstr "Se alcanzó el número máximo de reintentos."
+
+#. module: arc_ai_helpers
+msgid "Memory"
+msgstr "Memoria"
+
+#. module: arc_ai_helpers
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: arc_ai_helpers
+msgid "Metadata"
+msgstr "Metadatos"
+
+#. module: arc_ai_helpers
+msgid "Metrics"
+msgstr "Métricas"
+
+#. module: arc_ai_helpers
+msgid "Needs Review"
+msgstr "Necesita revisión"
+
+#. module: arc_ai_helpers
+msgid "New"
+msgstr "Nuevo"
+
+#. module: arc_ai_helpers
+msgid "No n8n webhook URL configured for %s"
+msgstr "No se ha configurado la URL de webhook de n8n para %s"
+
+#. module: arc_ai_helpers
+msgid "No n8n webhook configured for assistant"
+msgstr "No se ha configurado el webhook de n8n para el asistente"
+
+#. module: arc_ai_helpers
+msgid "Ollama connection failed: %s"
+msgstr "Conexión de Ollama fallida: %s"
+
+#. module: arc_ai_helpers
+msgid "Ollama connection successful! %d models available."
+msgstr "Conexión de Ollama exitosa. %d modelos disponibles."
+
+#. module: arc_ai_helpers
+msgid "Ollama endpoint not configured"
+msgstr "Punto de conexión de Ollama no configurado"
+
+#. module: arc_ai_helpers
+msgid "Only failed tasks can be retried."
+msgstr "Solo se pueden reintenta las tareas fallidas."
+
+#. module: arc_ai_helpers
+msgid "Only pending tasks can be processed."
+msgstr "Solo se pueden procesar las tareas pendientes."
+
+#. module: arc_ai_helpers
+msgid "OpenAI API key not configured"
+msgstr "La clave de API de OpenAI no está configurada"
+
+#. module: arc_ai_helpers
+msgid "OpenAI connection failed: %s"
+msgstr "Conexión de OpenAI fallida: %s"
+
+#. module: arc_ai_helpers
+msgid "OpenAI connection successful!"
+msgstr "Conexión de OpenAI exitosa"
+
+#. module: arc_ai_helpers
+msgid "Output"
+msgstr "Salida"
+
+#. module: arc_ai_helpers
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: arc_ai_helpers
+msgid "Persona"
+msgstr "Persona"
+
+#. module: arc_ai_helpers
+msgid "Postiz Settings"
+msgstr "Configuración de Postiz"
+
+#. module: arc_ai_helpers
+msgid "Privacy"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Process"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Processing"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Product Description"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Prompt"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Prompt Template"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Prompt Templates"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Provider"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Qdrant"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Qdrant Connection"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Qdrant Connection Failed"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Qdrant URL not configured"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Reject"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Related"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Response"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Retry"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Sales"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Sales Analyst"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Search Domains"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Slack"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Source"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Specialization"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "State"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Status"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Success"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Support"
+msgstr "Soporte"
+
+#. module: arc_ai_helpers
+msgid "Support Response"
+msgstr "Respuesta de soporte"
+
+#. module: arc_ai_helpers
+msgid "System Prompt"
+msgstr "Invitación del sistema"
+
+#. module: arc_ai_helpers
+msgid "Target Configuration"
+msgstr "Configuración de destino"
+
+#. module: arc_ai_helpers
+msgid "Task"
+msgstr "Tarea"
+
+#. module: arc_ai_helpers
+msgid "Tasks"
+msgstr "Tareas"
+
+#. module: arc_ai_helpers
+msgid "Tasks for %s"
+msgstr "Tareas para %s"
+
+#. module: arc_ai_helpers
+msgid "Technical"
+msgstr "Técnico"
+
+#. module: arc_ai_helpers
+msgid "Temperature must be between 0.0 and 1.0"
+msgstr "La temperatura debe estar entre 0.0 y 1.0"
+
+#. module: arc_ai_helpers
+msgid "Template"
+msgstr "Plantilla"
+
+#. module: arc_ai_helpers
+msgid "Test"
+msgstr "Prueba"
+
+#. module: arc_ai_helpers
+msgid "Test %s"
+msgstr "Prueba %s"
+
+#. module: arc_ai_helpers
+msgid "Test AI Connection"
+msgstr "Prueba de conexión de IA"
+
+#. module: arc_ai_helpers
+msgid "Test Qdrant"
+msgstr "Prueba Qdrant"
+
+#. module: arc_ai_helpers
+msgid "Test n8n"
+msgstr "Prueba n8n"
+
+#. module: arc_ai_helpers
+msgid "Text Summary"
+msgstr "Resumen de texto"
+
+#. module: arc_ai_helpers
+msgid "This Week"
+msgstr "Esta semana"
+
+#. module: arc_ai_helpers
+msgid "This assistant already has an Odoo user: %s"
+msgstr "This assistant already has an Odoo user: %s"
+
+#. module: arc_ai_helpers
+msgid "Timing"
+msgstr "Temporización"
+
+#. module: arc_ai_helpers
+msgid "Today"
+msgstr "Hoy"
+
+#. module: arc_ai_helpers
+msgid "Translation"
+msgstr "Traducción"
+
+#. module: arc_ai_helpers
+msgid "Type"
+msgstr "Tipo"
+
+#. module: arc_ai_helpers
+msgid "Unknown provider"
+msgstr "Proveedor desconocido"
+
+#. module: arc_ai_helpers
+msgid "Usage"
+msgstr "Uso"
+
+#. module: arc_ai_helpers
+msgid "Usage Statistics"
+msgstr "Estadísticas de uso"
+
+#. module: arc_ai_helpers
+msgid "User"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "User Prompt Template"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Variables"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Version"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Version %d has been restored."
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Version History"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "Version Restored"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "WordPress Settings"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "ai.assistant.form"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "ai.assistant.kanban"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "ai.assistant.list"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "ai.assistant.search"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "ai.log.form"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "ai.log.list"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "ai.log.search"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "ai.prompt.template.form"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "ai.prompt.template.list"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "ai.prompt.template.search"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "ai.settings.form"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "ai.settings.list"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "ai.task.form"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "ai.task.list"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "ai.task.search"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "arc.ai.domain.form"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "arc.ai.domain.kanban"
+msgstr ""
+
+#. module: arc_ai_helpers
+msgid "arc.ai.domain.list"
+msgstr "arc.ai.domain.list"
+
+#. module: arc_ai_helpers
+msgid "arc.ai.domain.search"
+msgstr "arc.ai.domain.search"
+
+#. module: arc_ai_helpers
+msgid "n8n"
+msgstr "n8n"
+
+#. module: arc_ai_helpers
+msgid "n8n Connection"
+msgstr "Conexión n8n"
+
+#. module: arc_ai_helpers
+msgid "n8n Connection Failed"
+msgstr "Conexión n8n fallida"
+
+#. module: arc_ai_helpers
+msgid "n8n base URL not configured"
+msgstr "URL base de n8n no configurada"
+
+#. module: arc_ai_helpers
+msgid "↑ Push to NocoDB"
+msgstr "↑ Enviar a NocoDB"
+
+#. module: arc_ai_helpers
+msgid "↓ Sync from NocoDB"
+msgstr "↓ Sincronizar desde NocoDB"
+
+#. module: arc_ai_helpers
+msgid "📄 Create Invoice"
+msgstr "📄 Crear Factura"
+
+#. module: arc_ai_helpers
+msgid "🔄 Refresh Usage"
+msgstr "🔄 Actualizar Uso"

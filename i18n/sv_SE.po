@@ -1,0 +1,752 @@
+# Translation of arc_ai_helpers to sv_SE
+# This file is distributed under the same license as the arc_ai_helpers module.
+msgid ""
+msgstr ""
+"Project-Id-Version: arc_ai_helpers\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 20:00+0000\n"
+"PO-Revision-Date: 2026-04-06 20:00+0000\n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. module: arc_ai_helpers
+msgid "AI"
+msgstr "AI"
+
+#. module: arc_ai_helpers
+msgid "AI Administrator"
+msgstr "AI Administrator"
+
+#. module: arc_ai_helpers
+msgid "AI Assistant"
+msgstr "AI Assistent"
+
+#. module: arc_ai_helpers
+msgid "AI Assistant (Bot)"
+msgstr "AI Assistent (Bot)"
+
+#. module: arc_ai_helpers
+msgid "AI Assistant: Company"
+msgstr "AI Assistent: Företag"
+
+#. module: arc_ai_helpers
+msgid "AI Assistants"
+msgstr "AI Assister"
+
+#. module: arc_ai_helpers
+msgid "AI Configuration"
+msgstr "AI Konfiguration"
+
+#. module: arc_ai_helpers
+msgid "AI Context: Company"
+msgstr "AI Kontext: Företag"
+
+#. module: arc_ai_helpers
+msgid "AI Domain"
+msgstr "AI Domän"
+
+#. module: arc_ai_helpers
+msgid "AI Domains"
+msgstr "AI Domäner"
+
+#. module: arc_ai_helpers
+msgid "AI Guidelines"
+msgstr "AI Riktlinjer"
+
+#. module: arc_ai_helpers
+msgid "AI Helpers"
+msgstr "AI Hjälpare"
+
+#. module: arc_ai_helpers
+msgid "AI Log"
+msgstr "AI Logg"
+
+#. module: arc_ai_helpers
+msgid "AI Log: Company"
+msgstr "AI Logg: Företag"
+
+#. module: arc_ai_helpers
+msgid "AI Logs"
+msgstr "AI Loggar"
+
+#. module: arc_ai_helpers
+msgid "AI Manager"
+msgstr "AI Chef"
+
+#. module: arc_ai_helpers
+msgid "AI Processing"
+msgstr "AI Bearbetning"
+
+#. module: arc_ai_helpers
+msgid "AI Prompt Template: Company"
+msgstr "AI Promptmall: Företag"
+
+#. module: arc_ai_helpers
+msgid "AI Settings"
+msgstr "AI Inställningar"
+
+#. module: arc_ai_helpers
+msgid "AI Settings: Company"
+msgstr "AI Inställningar: Företag"
+
+#. module: arc_ai_helpers
+msgid "AI Task"
+msgstr "AI Uppgift"
+
+#. module: arc_ai_helpers
+msgid "AI Task: Company"
+msgstr "AI Uppgift: Företag"
+
+#. module: arc_ai_helpers
+msgid "AI Tasks"
+msgstr "AI Uppgifter"
+
+#. module: arc_ai_helpers
+msgid "AI User"
+msgstr "AI Användare"
+
+#. module: arc_ai_helpers
+msgid "AI processing completed."
+msgstr "AI bearbetning slutförd"
+
+#. module: arc_ai_helpers
+msgid "AI: Check Low Stock"
+msgstr "AI: Kontrollera låg lager"
+
+#. module: arc_ai_helpers
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: arc_ai_helpers
+msgid "Anthropic API key not configured"
+msgstr "Anthropic API-nyckel är inte konfigurerad"
+
+#. module: arc_ai_helpers
+msgid "Anthropic API key present - connection test passed"
+msgstr "Anthropic API-nyckel närvarande - anslutningstest godkänd"
+
+#. module: arc_ai_helpers
+msgid "Approve"
+msgstr "Godkänn"
+
+#. module: arc_ai_helpers
+msgid "Archived"
+msgstr "Arkiverad"
+
+#. module: arc_ai_helpers
+msgid "Assistant"
+msgstr "Assistent"
+
+#. module: arc_ai_helpers
+msgid "Azure OpenAI credentials present"
+msgstr "Azure OpenAI-autentiseringsuppgifter närvarande"
+
+#. module: arc_ai_helpers
+msgid "Azure OpenAI requires both API key and endpoint"
+msgstr "Azure OpenAI kräver både API-nyckel och slutpunkt"
+
+#. module: arc_ai_helpers
+msgid "Basic Info"
+msgstr "Grundläggande information"
+
+#. module: arc_ai_helpers
+msgid "Billable"
+msgstr "Fakturerbar"
+
+#. module: arc_ai_helpers
+msgid "Billing"
+msgstr "Fakturering"
+
+#. module: arc_ai_helpers
+msgid "Brand Profile"
+msgstr "Varumärkesprofil"
+
+#. module: arc_ai_helpers
+msgid "Cancel"
+msgstr "Avbryt"
+
+#. module: arc_ai_helpers
+msgid "Cannot cancel completed or already cancelled tasks."
+msgstr "Kan inte avbryta slutförda eller redan avbrutna uppgifter."
+
+#. module: arc_ai_helpers
+msgid "Category"
+msgstr "Kategori"
+
+#. module: arc_ai_helpers
+msgid "Code Reviewer"
+msgstr "Kodgranskare"
+
+#. module: arc_ai_helpers
+msgid "Company"
+msgstr "Företag"
+
+#. module: arc_ai_helpers
+msgid "Company &amp; User"
+msgstr "Företag &amp; Användare"
+
+#. module: arc_ai_helpers
+msgid "Completed"
+msgstr "Slutförd"
+
+#. module: arc_ai_helpers
+msgid "Connected! %d collections found."
+msgstr "Ansluten! %d samlingar hittades."
+
+#. module: arc_ai_helpers
+msgid "Connected! %d workflows found."
+msgstr "Ansluten! %d arbetsflöden hittades."
+
+#. module: arc_ai_helpers
+msgid "Connection Test"
+msgstr "Anslutningstest"
+
+#. module: arc_ai_helpers
+msgid "Connection Test Failed"
+msgstr "Anslutningstest Misslyckades"
+
+#. module: arc_ai_helpers
+msgid "Connection failed: %s"
+msgstr "Anslutning misslyckades: %s"
+
+#. module: arc_ai_helpers
+msgid "Connection successful! (Mock provider - no actual API call)"
+msgstr "Anslutning lyckades! (Mock provider - ingen faktisk API-anrop)"
+
+#. module: arc_ai_helpers
+msgid "Content"
+msgstr "Innehåll"
+
+#. module: arc_ai_helpers
+msgid "Content Writer"
+msgstr "Innehållsskribent"
+
+#. module: arc_ai_helpers
+msgid "Context"
+msgstr "Sammanhang"
+
+#. module: arc_ai_helpers
+msgid "Create Odoo User"
+msgstr "Skapa Odoo-användare"
+
+#. module: arc_ai_helpers
+msgid "Created Odoo user: %s"
+msgstr "Skapade Odoo-användare: %s"
+
+#. module: arc_ai_helpers
+msgid "Customer"
+msgstr "Kund"
+
+#. module: arc_ai_helpers
+msgid "Date"
+msgstr "Datum"
+
+#. module: arc_ai_helpers
+msgid "Default System Prompt"
+msgstr "Standard systemprompt"
+
+#. module: arc_ai_helpers
+msgid "Details"
+msgstr "Detaljer"
+
+#. module: arc_ai_helpers
+msgid "Email Reply"
+msgstr "E-post svar"
+
+#. module: arc_ai_helpers
+msgid "Error"
+msgstr "Fel"
+
+#. module: arc_ai_helpers
+msgid "Errors"
+msgstr "Fel"
+
+#. module: arc_ai_helpers
+msgid "External Targets"
+msgstr "Externa mål"
+
+#. module: arc_ai_helpers
+msgid "Failed"
+msgstr "Misslyckades"
+
+#. module: arc_ai_helpers
+msgid "Failed to create Odoo user: %s"
+msgstr "Misslyckades med att skapa Odoo-användare: %s"
+
+#. module: arc_ai_helpers
+msgid "Failed to trigger workflow: %s"
+msgstr "Misslyckades med att utlösa arbetsflöde: %s"
+
+#. module: arc_ai_helpers
+msgid "Feedback"
+msgstr "Återkoppling"
+
+#. module: arc_ai_helpers
+msgid "Gmail"
+msgstr "Gmail"
+
+#. module: arc_ai_helpers
+msgid "Group By"
+msgstr "Gruppera efter"
+
+#. module: arc_ai_helpers
+msgid "Has Usage"
+msgstr "Har användning"
+
+#. module: arc_ai_helpers
+msgid "Hello %s, this is a test message."
+msgstr "Hej %s, detta är ett testmeddelande."
+
+#. module: arc_ai_helpers
+msgid "Identity"
+msgstr "Identitet"
+
+#. module: arc_ai_helpers
+msgid "Input"
+msgstr "Inmatning"
+
+#. module: arc_ai_helpers
+msgid "Input/Output"
+msgstr "Inmatning/Utmatning"
+
+#. module: arc_ai_helpers
+msgid "Integrations"
+msgstr "Integreringar"
+
+#. module: arc_ai_helpers
+msgid "Language"
+msgstr "Språk"
+
+#. module: arc_ai_helpers
+msgid "Limits"
+msgstr "Begränsningar"
+
+#. module: arc_ai_helpers
+msgid "Logs for %s"
+msgstr "Loggar för %s"
+
+#. module: arc_ai_helpers
+msgid "Maximum retry count reached."
+msgstr "Maximalt antal omförsök nådd."
+
+#. module: arc_ai_helpers
+msgid "Memory"
+msgstr "Minne"
+
+#. module: arc_ai_helpers
+msgid "Messages"
+msgstr "Meddelanden"
+
+#. module: arc_ai_helpers
+msgid "Metadata"
+msgstr "Metadata"
+
+#. module: arc_ai_helpers
+msgid "Metrics"
+msgstr "Mått"
+
+#. module: arc_ai_helpers
+msgid "Needs Review"
+msgstr "Kräver granskning"
+
+#. module: arc_ai_helpers
+msgid "New"
+msgstr "Ny"
+
+#. module: arc_ai_helpers
+msgid "No n8n webhook URL configured for %s"
+msgstr "Ingen n8n-webhook-URL konfigurerad för %s"
+
+#. module: arc_ai_helpers
+msgid "No n8n webhook configured for assistant"
+msgstr "Ingen n8n-webhook konfigurerad för assistent"
+
+#. module: arc_ai_helpers
+msgid "Ollama connection failed: %s"
+msgstr "Ollama-anslutning misslyckades: %s"
+
+#. module: arc_ai_helpers
+msgid "Ollama connection successful! %d models available."
+msgstr "Ollama-anslutning lyckades! %d modeller tillgängliga."
+
+#. module: arc_ai_helpers
+msgid "Ollama endpoint not configured"
+msgstr "Ollama-slutpunkt inte konfigurerad"
+
+#. module: arc_ai_helpers
+msgid "Only failed tasks can be retried."
+msgstr "Endast misslyckade uppgifter kan återförsökas."
+
+#. module: arc_ai_helpers
+msgid "Only pending tasks can be processed."
+msgstr "Endast väntande uppgifter kan bearbetas."
+
+#. module: arc_ai_helpers
+msgid "OpenAI API key not configured"
+msgstr "OpenAI API-nyckel inte konfigurerad"
+
+#. module: arc_ai_helpers
+msgid "OpenAI connection failed: %s"
+msgstr "OpenAI-anslutning misslyckades: %s"
+
+#. module: arc_ai_helpers
+msgid "OpenAI connection successful!"
+msgstr "OpenAI-anslutning lyckades!"
+
+#. module: arc_ai_helpers
+msgid "Output"
+msgstr "Utdata"
+
+#. module: arc_ai_helpers
+msgid "Pending"
+msgstr "Väntande"
+
+#. module: arc_ai_helpers
+msgid "Persona"
+msgstr "Personlighet"
+
+#. module: arc_ai_helpers
+msgid "Postiz Settings"
+msgstr "Postiz inställningar"
+
+#. module: arc_ai_helpers
+msgid "Privacy"
+msgstr "Integritet"
+
+#. module: arc_ai_helpers
+msgid "Process"
+msgstr "Process"
+
+#. module: arc_ai_helpers
+msgid "Processing"
+msgstr "Behandling"
+
+#. module: arc_ai_helpers
+msgid "Product Description"
+msgstr "Produktbeskrivning"
+
+#. module: arc_ai_helpers
+msgid "Prompt"
+msgstr "Uppmaning"
+
+#. module: arc_ai_helpers
+msgid "Prompt Template"
+msgstr "Uppmaningsmall"
+
+#. module: arc_ai_helpers
+msgid "Prompt Templates"
+msgstr "Uppmaningsmallar"
+
+#. module: arc_ai_helpers
+msgid "Provider"
+msgstr "Leverantör"
+
+#. module: arc_ai_helpers
+msgid "Qdrant"
+msgstr "Qdrant"
+
+#. module: arc_ai_helpers
+msgid "Qdrant Connection"
+msgstr "Qdrant anslutning"
+
+#. module: arc_ai_helpers
+msgid "Qdrant Connection Failed"
+msgstr "Qdrant anslutning misslyckades"
+
+#. module: arc_ai_helpers
+msgid "Qdrant URL not configured"
+msgstr "Qdrant URL inte konfigurerad"
+
+#. module: arc_ai_helpers
+msgid "Reject"
+msgstr "Avvisa"
+
+#. module: arc_ai_helpers
+msgid "Related"
+msgstr "Relaterad"
+
+#. module: arc_ai_helpers
+msgid "Response"
+msgstr "Svar"
+
+#. module: arc_ai_helpers
+msgid "Retry"
+msgstr "Försök igen"
+
+#. module: arc_ai_helpers
+msgid "Sales"
+msgstr "Försäljning"
+
+#. module: arc_ai_helpers
+msgid "Sales Analyst"
+msgstr "Försäljningsanalytiker"
+
+#. module: arc_ai_helpers
+msgid "Search Domains"
+msgstr "Sökdomen"
+
+#. module: arc_ai_helpers
+msgid "Slack"
+msgstr "Slack"
+
+#. module: arc_ai_helpers
+msgid "Source"
+msgstr "Källa"
+
+#. module: arc_ai_helpers
+msgid "Specialization"
+msgstr "Specialisering"
+
+#. module: arc_ai_helpers
+msgid "State"
+msgstr "Tillstånd"
+
+#. module: arc_ai_helpers
+msgid "Status"
+msgstr "Status"
+
+#. module: arc_ai_helpers
+msgid "Success"
+msgstr "Lyckades"
+
+#. module: arc_ai_helpers
+msgid "Support"
+msgstr "Stöd"
+
+#. module: arc_ai_helpers
+msgid "Support Response"
+msgstr "Stödsvar"
+
+#. module: arc_ai_helpers
+msgid "System Prompt"
+msgstr "Systemmeddelande"
+
+#. module: arc_ai_helpers
+msgid "Target Configuration"
+msgstr "Målkonfiguration"
+
+#. module: arc_ai_helpers
+msgid "Task"
+msgstr "Uppgift"
+
+#. module: arc_ai_helpers
+msgid "Tasks"
+msgstr "Uppgifter"
+
+#. module: arc_ai_helpers
+msgid "Tasks for %s"
+msgstr "Uppgifter för %s"
+
+#. module: arc_ai_helpers
+msgid "Technical"
+msgstr "Teknisk"
+
+#. module: arc_ai_helpers
+msgid "Temperature must be between 0.0 and 1.0"
+msgstr "Temperaturen måste vara mellan 0.0 och 1.0"
+
+#. module: arc_ai_helpers
+msgid "Template"
+msgstr "Mall"
+
+#. module: arc_ai_helpers
+msgid "Test"
+msgstr "Test"
+
+#. module: arc_ai_helpers
+msgid "Test %s"
+msgstr "Test %s"
+
+#. module: arc_ai_helpers
+msgid "Test AI Connection"
+msgstr "Testa AI-anslutning"
+
+#. module: arc_ai_helpers
+msgid "Test Qdrant"
+msgstr "Testa Qdrant"
+
+#. module: arc_ai_helpers
+msgid "Test n8n"
+msgstr "Testa n8n"
+
+#. module: arc_ai_helpers
+msgid "Text Summary"
+msgstr "Textsammanfattning"
+
+#. module: arc_ai_helpers
+msgid "This Week"
+msgstr "Denna vecka"
+
+#. module: arc_ai_helpers
+msgid "This assistant already has an Odoo user: %s"
+msgstr "Denna assistent har redan en Odoo-användare: %s"
+
+#. module: arc_ai_helpers
+msgid "Timing"
+msgstr "Tid"
+
+#. module: arc_ai_helpers
+msgid "Today"
+msgstr "Idag"
+
+#. module: arc_ai_helpers
+msgid "Translation"
+msgstr "Översättning"
+
+#. module: arc_ai_helpers
+msgid "Type"
+msgstr "Typ"
+
+#. module: arc_ai_helpers
+msgid "Unknown provider"
+msgstr "Okänd leverantör"
+
+#. module: arc_ai_helpers
+msgid "Usage"
+msgstr "Användning"
+
+#. module: arc_ai_helpers
+msgid "Usage Statistics"
+msgstr "Användningsstatistik"
+
+#. module: arc_ai_helpers
+msgid "User"
+msgstr "Användare"
+
+#. module: arc_ai_helpers
+msgid "User Prompt Template"
+msgstr "Mall för användarprompt"
+
+#. module: arc_ai_helpers
+msgid "Variables"
+msgstr "Variabler"
+
+#. module: arc_ai_helpers
+msgid "Version"
+msgstr "Version"
+
+#. module: arc_ai_helpers
+msgid "Version %d has been restored."
+msgstr "Version %d har återställts."
+
+#. module: arc_ai_helpers
+msgid "Version History"
+msgstr "Versionshistorik"
+
+#. module: arc_ai_helpers
+msgid "Version Restored"
+msgstr "Version återställd"
+
+#. module: arc_ai_helpers
+msgid "WordPress Settings"
+msgstr "WordPress-inställningar"
+
+#. module: arc_ai_helpers
+msgid "ai.assistant.form"
+msgstr "ai.assistant.form"
+
+#. module: arc_ai_helpers
+msgid "ai.assistant.kanban"
+msgstr "ai.assistant.kanban"
+
+#. module: arc_ai_helpers
+msgid "ai.assistant.list"
+msgstr "ai.assistant.list"
+
+#. module: arc_ai_helpers
+msgid "ai.assistant.search"
+msgstr "ai.assistant.search"
+
+#. module: arc_ai_helpers
+msgid "ai.log.form"
+msgstr "ai.log.form"
+
+#. module: arc_ai_helpers
+msgid "ai.log.list"
+msgstr "ai.log.list"
+
+#. module: arc_ai_helpers
+msgid "ai.log.search"
+msgstr "ai.log.search"
+
+#. module: arc_ai_helpers
+msgid "ai.prompt.template.form"
+msgstr "ai.prompt.template.form"
+
+#. module: arc_ai_helpers
+msgid "ai.prompt.template.list"
+msgstr "ai.prompt.template.list"
+
+#. module: arc_ai_helpers
+msgid "ai.prompt.template.search"
+msgstr "ai.prompt.template.search"
+
+#. module: arc_ai_helpers
+msgid "ai.settings.form"
+msgstr "ai.settings.form"
+
+#. module: arc_ai_helpers
+msgid "ai.settings.list"
+msgstr "ai.settings.list"
+
+#. module: arc_ai_helpers
+msgid "ai.task.form"
+msgstr "ai.task.form"
+
+#. module: arc_ai_helpers
+msgid "ai.task.list"
+msgstr "ai.task.list"
+
+#. module: arc_ai_helpers
+msgid "ai.task.search"
+msgstr "ai.task.search"
+
+#. module: arc_ai_helpers
+msgid "arc.ai.domain.form"
+msgstr "arc.ai.domain.form"
+
+#. module: arc_ai_helpers
+msgid "arc.ai.domain.kanban"
+msgstr "arc.ai.domain.kanban"
+
+#. module: arc_ai_helpers
+msgid "arc.ai.domain.list"
+msgstr "arc.ai.domänlista"
+
+#. module: arc_ai_helpers
+msgid "arc.ai.domain.search"
+msgstr "arc.ai.domänsök"
+
+#. module: arc_ai_helpers
+msgid "n8n"
+msgstr "n8n"
+
+#. module: arc_ai_helpers
+msgid "n8n Connection"
+msgstr "n8n anslutning"
+
+#. module: arc_ai_helpers
+msgid "n8n Connection Failed"
+msgstr "n8n anslutning misslyckades"
+
+#. module: arc_ai_helpers
+msgid "n8n base URL not configured"
+msgstr "n8n bas URL inte konfigurerad"
+
+#. module: arc_ai_helpers
+msgid "↑ Push to NocoDB"
+msgstr "↑ Skicka till NocoDB"
+
+#. module: arc_ai_helpers
+msgid "↓ Sync from NocoDB"
+msgstr "↓ Synkronisera från NocoDB"
+
+#. module: arc_ai_helpers
+msgid "📄 Create Invoice"
+msgstr "📄 Skapa faktura"
+
+#. module: arc_ai_helpers
+msgid "🔄 Refresh Usage"
+msgstr "🔄 Uppdatera användning"

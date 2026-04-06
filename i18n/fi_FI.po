@@ -1,0 +1,752 @@
+# Translation of arc_ai_helpers to fi_FI
+# This file is distributed under the same license as the arc_ai_helpers module.
+msgid ""
+msgstr ""
+"Project-Id-Version: arc_ai_helpers\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 20:00+0000\n"
+"PO-Revision-Date: 2026-04-06 20:00+0000\n"
+"Language: fi_FI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. module: arc_ai_helpers
+msgid "AI"
+msgstr "Tekoäly"
+
+#. module: arc_ai_helpers
+msgid "AI Administrator"
+msgstr "Tekoälyn ylläpitäjä"
+
+#. module: arc_ai_helpers
+msgid "AI Assistant"
+msgstr "Tekoälyavustaja"
+
+#. module: arc_ai_helpers
+msgid "AI Assistant (Bot)"
+msgstr "Tekoälyavustaja (Bot)"
+
+#. module: arc_ai_helpers
+msgid "AI Assistant: Company"
+msgstr "Tekoälyavustaja: Yritys"
+
+#. module: arc_ai_helpers
+msgid "AI Assistants"
+msgstr "Tekoälyavustajat"
+
+#. module: arc_ai_helpers
+msgid "AI Configuration"
+msgstr "Tekoälykonfiguraatio"
+
+#. module: arc_ai_helpers
+msgid "AI Context: Company"
+msgstr "Tekoälykonteksti: Yritys"
+
+#. module: arc_ai_helpers
+msgid "AI Domain"
+msgstr "Tekoälyalue"
+
+#. module: arc_ai_helpers
+msgid "AI Domains"
+msgstr "Tekoälyalueet"
+
+#. module: arc_ai_helpers
+msgid "AI Guidelines"
+msgstr "Tekoälyohjeet"
+
+#. module: arc_ai_helpers
+msgid "AI Helpers"
+msgstr "Tekoälyapuohjelmat"
+
+#. module: arc_ai_helpers
+msgid "AI Log"
+msgstr "Tekoälyloki"
+
+#. module: arc_ai_helpers
+msgid "AI Log: Company"
+msgstr "Tekoälyloki: Yritys"
+
+#. module: arc_ai_helpers
+msgid "AI Logs"
+msgstr "Tekoälylokikirjaukset"
+
+#. module: arc_ai_helpers
+msgid "AI Manager"
+msgstr "Tekoälyjohtaja"
+
+#. module: arc_ai_helpers
+msgid "AI Processing"
+msgstr "Tekoälyprosessi"
+
+#. module: arc_ai_helpers
+msgid "AI Prompt Template: Company"
+msgstr "Tekoälykyselymalli: Yritys"
+
+#. module: arc_ai_helpers
+msgid "AI Settings"
+msgstr "Tekoälyasetukset"
+
+#. module: arc_ai_helpers
+msgid "AI Settings: Company"
+msgstr "Tekoälyasetukset: Yritys"
+
+#. module: arc_ai_helpers
+msgid "AI Task"
+msgstr "Tekoälytehtävä"
+
+#. module: arc_ai_helpers
+msgid "AI Task: Company"
+msgstr "Tekoälytehtävä: Yritys"
+
+#. module: arc_ai_helpers
+msgid "AI Tasks"
+msgstr "Tekoälytehtävät"
+
+#. module: arc_ai_helpers
+msgid "AI User"
+msgstr "Tekoälykäyttäjä"
+
+#. module: arc_ai_helpers
+msgid "AI processing completed."
+msgstr "Tekoälyprosessi valmis."
+
+#. module: arc_ai_helpers
+msgid "AI: Check Low Stock"
+msgstr "AI: Tarkista matala varasto"
+
+#. module: arc_ai_helpers
+msgid "Active"
+msgstr "Aktiivinen"
+
+#. module: arc_ai_helpers
+msgid "Anthropic API key not configured"
+msgstr "Anthropic API-avain ei ole määritetty"
+
+#. module: arc_ai_helpers
+msgid "Anthropic API key present - connection test passed"
+msgstr "Anthropic API-avain on määritetty - yhteys testattu onnistuneesti"
+
+#. module: arc_ai_helpers
+msgid "Approve"
+msgstr "Hyväksy"
+
+#. module: arc_ai_helpers
+msgid "Archived"
+msgstr "Arkistoidut"
+
+#. module: arc_ai_helpers
+msgid "Assistant"
+msgstr "Avustaja"
+
+#. module: arc_ai_helpers
+msgid "Azure OpenAI credentials present"
+msgstr "Azure OpenAI -tunnistetiedot on määritetty"
+
+#. module: arc_ai_helpers
+msgid "Azure OpenAI requires both API key and endpoint"
+msgstr "Azure OpenAI vaatii sekä API-avaimen että päätepisteen"
+
+#. module: arc_ai_helpers
+msgid "Basic Info"
+msgstr "Perustiedot"
+
+#. module: arc_ai_helpers
+msgid "Billable"
+msgstr "Laskutettava"
+
+#. module: arc_ai_helpers
+msgid "Billing"
+msgstr "Laskutus"
+
+#. module: arc_ai_helpers
+msgid "Brand Profile"
+msgstr "Brändin profiili"
+
+#. module: arc_ai_helpers
+msgid "Cancel"
+msgstr "Peruuta"
+
+#. module: arc_ai_helpers
+msgid "Cannot cancel completed or already cancelled tasks."
+msgstr "Valmistuneita tai jo peruttuja tehtäviä ei voida perua."
+
+#. module: arc_ai_helpers
+msgid "Category"
+msgstr "Kategoria"
+
+#. module: arc_ai_helpers
+msgid "Code Reviewer"
+msgstr "Koodin tarkistaja"
+
+#. module: arc_ai_helpers
+msgid "Company"
+msgstr "Yritys"
+
+#. module: arc_ai_helpers
+msgid "Company &amp; User"
+msgstr "Yritys &amp; Käyttäjä"
+
+#. module: arc_ai_helpers
+msgid "Completed"
+msgstr "Valmis"
+
+#. module: arc_ai_helpers
+msgid "Connected! %d collections found."
+msgstr "Yhdistetty! %d kokoelmaa löytyi."
+
+#. module: arc_ai_helpers
+msgid "Connected! %d workflows found."
+msgstr "Yhdistetty! %d työvirran löytyi."
+
+#. module: arc_ai_helpers
+msgid "Connection Test"
+msgstr "Yhteys testi"
+
+#. module: arc_ai_helpers
+msgid "Connection Test Failed"
+msgstr "Yhteys testi epäonnistui"
+
+#. module: arc_ai_helpers
+msgid "Connection failed: %s"
+msgstr "Yhteys epäonnistui: %s"
+
+#. module: arc_ai_helpers
+msgid "Connection successful! (Mock provider - no actual API call)"
+msgstr "Yhteys onnistui! (Mock-palvelu - ei varsinaista API-kutsua)"
+
+#. module: arc_ai_helpers
+msgid "Content"
+msgstr "Sisältö"
+
+#. module: arc_ai_helpers
+msgid "Content Writer"
+msgstr "Sisällön kirjoittaja"
+
+#. module: arc_ai_helpers
+msgid "Context"
+msgstr "Konteksti"
+
+#. module: arc_ai_helpers
+msgid "Create Odoo User"
+msgstr "Luo Odoo-käyttäjä"
+
+#. module: arc_ai_helpers
+msgid "Created Odoo user: %s"
+msgstr "Luotu Odoo-käyttäjä: %s"
+
+#. module: arc_ai_helpers
+msgid "Customer"
+msgstr "Asiakas"
+
+#. module: arc_ai_helpers
+msgid "Date"
+msgstr "Päivämäärä"
+
+#. module: arc_ai_helpers
+msgid "Default System Prompt"
+msgstr "Oletusjärjestelmäkysely"
+
+#. module: arc_ai_helpers
+msgid "Details"
+msgstr "Tiedot"
+
+#. module: arc_ai_helpers
+msgid "Email Reply"
+msgstr "Vastaa sähköpostiin"
+
+#. module: arc_ai_helpers
+msgid "Error"
+msgstr "Virhe"
+
+#. module: arc_ai_helpers
+msgid "Errors"
+msgstr "Virheet"
+
+#. module: arc_ai_helpers
+msgid "External Targets"
+msgstr "Ulkopuoliset kohdat"
+
+#. module: arc_ai_helpers
+msgid "Failed"
+msgstr "Epäonnistui"
+
+#. module: arc_ai_helpers
+msgid "Failed to create Odoo user: %s"
+msgstr "Odoo-käyttäjän luominen epäonnistui: %s"
+
+#. module: arc_ai_helpers
+msgid "Failed to trigger workflow: %s"
+msgstr "Työnkulun käynnistäminen epäonnistui: %s"
+
+#. module: arc_ai_helpers
+msgid "Feedback"
+msgstr "Palaute"
+
+#. module: arc_ai_helpers
+msgid "Gmail"
+msgstr "Gmail"
+
+#. module: arc_ai_helpers
+msgid "Group By"
+msgstr "Ryhmää"
+
+#. module: arc_ai_helpers
+msgid "Has Usage"
+msgstr "Käyttö"
+
+#. module: arc_ai_helpers
+msgid "Hello %s, this is a test message."
+msgstr "Hei %s, tämä on testiviesti."
+
+#. module: arc_ai_helpers
+msgid "Identity"
+msgstr "Tunniste"
+
+#. module: arc_ai_helpers
+msgid "Input"
+msgstr "Syöte"
+
+#. module: arc_ai_helpers
+msgid "Input/Output"
+msgstr "Syöte/Tuloste"
+
+#. module: arc_ai_helpers
+msgid "Integrations"
+msgstr "Integroidut"
+
+#. module: arc_ai_helpers
+msgid "Language"
+msgstr "Kieli"
+
+#. module: arc_ai_helpers
+msgid "Limits"
+msgstr "Rajoitukset"
+
+#. module: arc_ai_helpers
+msgid "Logs for %s"
+msgstr "Lokit kohteelle %s"
+
+#. module: arc_ai_helpers
+msgid "Maximum retry count reached."
+msgstr "Maksimi uudelleenyritysten määrä saavutettu."
+
+#. module: arc_ai_helpers
+msgid "Memory"
+msgstr "Muisti"
+
+#. module: arc_ai_helpers
+msgid "Messages"
+msgstr "Viestit"
+
+#. module: arc_ai_helpers
+msgid "Metadata"
+msgstr "Metatiedot"
+
+#. module: arc_ai_helpers
+msgid "Metrics"
+msgstr "Mittarit"
+
+#. module: arc_ai_helpers
+msgid "Needs Review"
+msgstr "Tarvitsee tarkastelun"
+
+#. module: arc_ai_helpers
+msgid "New"
+msgstr "Uusi"
+
+#. module: arc_ai_helpers
+msgid "No n8n webhook URL configured for %s"
+msgstr "Ei n8n webhook URL:ia määritetty kohteelle %s"
+
+#. module: arc_ai_helpers
+msgid "No n8n webhook configured for assistant"
+msgstr "Ei n8n webhookia määritetty avustajalle"
+
+#. module: arc_ai_helpers
+msgid "Ollama connection failed: %s"
+msgstr "Ollama-yhteys epäonnistui: %s"
+
+#. module: arc_ai_helpers
+msgid "Ollama connection successful! %d models available."
+msgstr "Ollama-yhteys onnistui! %d mallia saatavilla."
+
+#. module: arc_ai_helpers
+msgid "Ollama endpoint not configured"
+msgstr "Ollama-päätepistettä ei ole määritetty"
+
+#. module: arc_ai_helpers
+msgid "Only failed tasks can be retried."
+msgstr "Vain epäonnistuneet tehtävät voidaan uudelleenyritys."
+
+#. module: arc_ai_helpers
+msgid "Only pending tasks can be processed."
+msgstr "Vain odottavat tehtävät voidaan prosessoida."
+
+#. module: arc_ai_helpers
+msgid "OpenAI API key not configured"
+msgstr "OpenAI-avain ei ole määritetty"
+
+#. module: arc_ai_helpers
+msgid "OpenAI connection failed: %s"
+msgstr "OpenAI-yhteys epäonnistui: %s"
+
+#. module: arc_ai_helpers
+msgid "OpenAI connection successful!"
+msgstr "OpenAI-yhteys onnistui!"
+
+#. module: arc_ai_helpers
+msgid "Output"
+msgstr "Tuloste"
+
+#. module: arc_ai_helpers
+msgid "Pending"
+msgstr "Odottava"
+
+#. module: arc_ai_helpers
+msgid "Persona"
+msgstr "Henkilö"
+
+#. module: arc_ai_helpers
+msgid "Postiz Settings"
+msgstr "Postiz Asetukset"
+
+#. module: arc_ai_helpers
+msgid "Privacy"
+msgstr "Yksityisyys"
+
+#. module: arc_ai_helpers
+msgid "Process"
+msgstr "Prosessi"
+
+#. module: arc_ai_helpers
+msgid "Processing"
+msgstr "Käsittely"
+
+#. module: arc_ai_helpers
+msgid "Product Description"
+msgstr "Tuotekuvaus"
+
+#. module: arc_ai_helpers
+msgid "Prompt"
+msgstr "Ohjelma"
+
+#. module: arc_ai_helpers
+msgid "Prompt Template"
+msgstr "Ohjelmamalli"
+
+#. module: arc_ai_helpers
+msgid "Prompt Templates"
+msgstr "Ohjelmamallit"
+
+#. module: arc_ai_helpers
+msgid "Provider"
+msgstr "Toimittaja"
+
+#. module: arc_ai_helpers
+msgid "Qdrant"
+msgstr "Qdrant"
+
+#. module: arc_ai_helpers
+msgid "Qdrant Connection"
+msgstr "Qdrant-yhteys"
+
+#. module: arc_ai_helpers
+msgid "Qdrant Connection Failed"
+msgstr "Qdrant-yhteys epaonnistui"
+
+#. module: arc_ai_helpers
+msgid "Qdrant URL not configured"
+msgstr "Qdrant-osoite ei ole määritelty"
+
+#. module: arc_ai_helpers
+msgid "Reject"
+msgstr "Hylkää"
+
+#. module: arc_ai_helpers
+msgid "Related"
+msgstr "Liittyvät"
+
+#. module: arc_ai_helpers
+msgid "Response"
+msgstr "Vastaus"
+
+#. module: arc_ai_helpers
+msgid "Retry"
+msgstr "Yritä uudelleen"
+
+#. module: arc_ai_helpers
+msgid "Sales"
+msgstr "Myynti"
+
+#. module: arc_ai_helpers
+msgid "Sales Analyst"
+msgstr "Myyntianalyytikko"
+
+#. module: arc_ai_helpers
+msgid "Search Domains"
+msgstr "Hakukohdat"
+
+#. module: arc_ai_helpers
+msgid "Slack"
+msgstr "Slack"
+
+#. module: arc_ai_helpers
+msgid "Source"
+msgstr "Lähde"
+
+#. module: arc_ai_helpers
+msgid "Specialization"
+msgstr "Erikoistuminen"
+
+#. module: arc_ai_helpers
+msgid "State"
+msgstr "Tila"
+
+#. module: arc_ai_helpers
+msgid "Status"
+msgstr "Tilanne"
+
+#. module: arc_ai_helpers
+msgid "Success"
+msgstr "Onnistuminen"
+
+#. module: arc_ai_helpers
+msgid "Support"
+msgstr "Tuki"
+
+#. module: arc_ai_helpers
+msgid "Support Response"
+msgstr "Tukivastaus"
+
+#. module: arc_ai_helpers
+msgid "System Prompt"
+msgstr "Järjestelmän ohje"
+
+#. module: arc_ai_helpers
+msgid "Target Configuration"
+msgstr "Kohdeasetus"
+
+#. module: arc_ai_helpers
+msgid "Task"
+msgstr "Tehtävä"
+
+#. module: arc_ai_helpers
+msgid "Tasks"
+msgstr "Tehtävät"
+
+#. module: arc_ai_helpers
+msgid "Tasks for %s"
+msgstr "Tehtävät %s"
+
+#. module: arc_ai_helpers
+msgid "Technical"
+msgstr "Tekninen"
+
+#. module: arc_ai_helpers
+msgid "Temperature must be between 0.0 and 1.0"
+msgstr "Lämpötilan on oltava välillä 0.0 ja 1.0"
+
+#. module: arc_ai_helpers
+msgid "Template"
+msgstr "Malli"
+
+#. module: arc_ai_helpers
+msgid "Test"
+msgstr "Testi"
+
+#. module: arc_ai_helpers
+msgid "Test %s"
+msgstr "Testi %s"
+
+#. module: arc_ai_helpers
+msgid "Test AI Connection"
+msgstr "Testaa AI-yhteys"
+
+#. module: arc_ai_helpers
+msgid "Test Qdrant"
+msgstr "Testaa Qdrant"
+
+#. module: arc_ai_helpers
+msgid "Test n8n"
+msgstr "Testaa n8n"
+
+#. module: arc_ai_helpers
+msgid "Text Summary"
+msgstr "Tekstikokous"
+
+#. module: arc_ai_helpers
+msgid "This Week"
+msgstr "Tällä viikolla"
+
+#. module: arc_ai_helpers
+msgid "This assistant already has an Odoo user: %s"
+msgstr "Tämä avustaja on jo Odoo-käyttäjä: %s"
+
+#. module: arc_ai_helpers
+msgid "Timing"
+msgstr "Ajoitus"
+
+#. module: arc_ai_helpers
+msgid "Today"
+msgstr "Tänään"
+
+#. module: arc_ai_helpers
+msgid "Translation"
+msgstr "Käännös"
+
+#. module: arc_ai_helpers
+msgid "Type"
+msgstr "Tyyppi"
+
+#. module: arc_ai_helpers
+msgid "Unknown provider"
+msgstr "Tuntematon tarjoaja"
+
+#. module: arc_ai_helpers
+msgid "Usage"
+msgstr "Käyttö"
+
+#. module: arc_ai_helpers
+msgid "Usage Statistics"
+msgstr "Käyttötilastot"
+
+#. module: arc_ai_helpers
+msgid "User"
+msgstr "Käyttäjä"
+
+#. module: arc_ai_helpers
+msgid "User Prompt Template"
+msgstr "Käyttäjälohkeen mallipohja"
+
+#. module: arc_ai_helpers
+msgid "Variables"
+msgstr "Muuttujat"
+
+#. module: arc_ai_helpers
+msgid "Version"
+msgstr "Versio"
+
+#. module: arc_ai_helpers
+msgid "Version %d has been restored."
+msgstr "Versio %d on palautettu."
+
+#. module: arc_ai_helpers
+msgid "Version History"
+msgstr "Versiohistoria"
+
+#. module: arc_ai_helpers
+msgid "Version Restored"
+msgstr "Versio palautettu"
+
+#. module: arc_ai_helpers
+msgid "WordPress Settings"
+msgstr "WordPress Asetukset"
+
+#. module: arc_ai_helpers
+msgid "ai.assistant.form"
+msgstr "ai.assistant.form"
+
+#. module: arc_ai_helpers
+msgid "ai.assistant.kanban"
+msgstr "ai.assistant.kanban"
+
+#. module: arc_ai_helpers
+msgid "ai.assistant.list"
+msgstr "ai.assistant.list"
+
+#. module: arc_ai_helpers
+msgid "ai.assistant.search"
+msgstr "ai.assistant.search"
+
+#. module: arc_ai_helpers
+msgid "ai.log.form"
+msgstr "ai.log.form"
+
+#. module: arc_ai_helpers
+msgid "ai.log.list"
+msgstr "ai.log.list"
+
+#. module: arc_ai_helpers
+msgid "ai.log.search"
+msgstr "ai.log.search"
+
+#. module: arc_ai_helpers
+msgid "ai.prompt.template.form"
+msgstr "ai.prompt.template.form"
+
+#. module: arc_ai_helpers
+msgid "ai.prompt.template.list"
+msgstr "ai.prompt.template.list"
+
+#. module: arc_ai_helpers
+msgid "ai.prompt.template.search"
+msgstr "ai.prompt.template.search"
+
+#. module: arc_ai_helpers
+msgid "ai.settings.form"
+msgstr "ai.settings.form"
+
+#. module: arc_ai_helpers
+msgid "ai.settings.list"
+msgstr "ai.settings.list"
+
+#. module: arc_ai_helpers
+msgid "ai.task.form"
+msgstr "ai.task.form"
+
+#. module: arc_ai_helpers
+msgid "ai.task.list"
+msgstr "ai.task.list"
+
+#. module: arc_ai_helpers
+msgid "ai.task.search"
+msgstr "ai.task.search"
+
+#. module: arc_ai_helpers
+msgid "arc.ai.domain.form"
+msgstr "arc.ai.domain.form"
+
+#. module: arc_ai_helpers
+msgid "arc.ai.domain.kanban"
+msgstr "arc.ai.domain.kanban"
+
+#. module: arc_ai_helpers
+msgid "arc.ai.domain.list"
+msgstr "arc.ai.domain.list"
+
+#. module: arc_ai_helpers
+msgid "arc.ai.domain.search"
+msgstr "arc.ai.domain.search"
+
+#. module: arc_ai_helpers
+msgid "n8n"
+msgstr "n8n"
+
+#. module: arc_ai_helpers
+msgid "n8n Connection"
+msgstr "n8n Yhteys"
+
+#. module: arc_ai_helpers
+msgid "n8n Connection Failed"
+msgstr "n8n Yhteyden muodostus epaonnistui"
+
+#. module: arc_ai_helpers
+msgid "n8n base URL not configured"
+msgstr "n8n perus URL ei ole määritetty"
+
+#. module: arc_ai_helpers
+msgid "↑ Push to NocoDB"
+msgstr "↑ Siirrä NocoDB:hen"
+
+#. module: arc_ai_helpers
+msgid "↓ Sync from NocoDB"
+msgstr "↓ Synkronoi NocoDB:stä"
+
+#. module: arc_ai_helpers
+msgid "📄 Create Invoice"
+msgstr "📄 Luo Lasku"
+
+#. module: arc_ai_helpers
+msgid "🔄 Refresh Usage"
+msgstr "🔄 Päivitä Käyttö"
